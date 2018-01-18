@@ -398,6 +398,15 @@
             "CREATE_EPIC": "Create epic"
         }
     },
+    "MESSAGES": {
+        "SECTION_NAME": "Messages",
+        "PAGE_TITLE": "Messages - {{projectName}}",
+        "PAGE_DESCRIPTION": "Project Chatting Box",
+        "ROOM": {
+            "TITLE": "Meeting Rooms",
+            "PLACEHOLDER_INPUT_SEARCH": "Search by room name"
+        }
+    },
     "PROJECTS": {
         "PAGE_TITLE": "My projects - Taiga",
         "PAGE_DESCRIPTION": "A list with all your projects, you can reorder or create a new one.",
@@ -413,8 +422,8 @@
         "DEPRECATED_FILE": "Deprecated?",
         "ADD": "Add new attachment. {{maxFileSizeMsg}}",
         "DROP": "Drop attachments here!",
-        "SHOW_DEPRECATED": "+ show deprecated atachments",
-        "HIDE_DEPRECATED": "- hide deprecated atachments",
+        "SHOW_DEPRECATED": "+ show deprecated attachments",
+        "HIDE_DEPRECATED": "- hide deprecated attachments",
         "COUNT_DEPRECATED": "({{ counter }} deprecated)",
         "MAX_UPLOAD_SIZE": "Maximum upload size is {{maxFileSize}}",
         "DATE": "DD MMM YYYY [at] hh:mm",
@@ -840,6 +849,7 @@
             "CHANGE_PASSWORD_TITLE": "Change password",
             "CHANGE_PASSWORD": "Change password",
             "DASHBOARD_TITLE": "Dashboard",
+            "MESSAGE_TITLE": "Message",
             "DISCOVER_TITLE": "Discover trending projects",
             "DISCOVER": "Discover"
         },

@@ -1,0 +1,12 @@
+nav    
+    ul
+        li(
+            tg-repeat="room in vm.rooms"
+        )
+            a(
+                ng-class="{active: (room.get('slug') == vm.room)}"
+                ng-click="vm.changeRoom(room)"
+                href="/messages/{{room.get('slug')}}"
+            )
+                span.title(tg-bo-bind="vm.getRoomName(room)")                    
+                small(tg-bo-bind="vm.getRoomProjectName(room)")

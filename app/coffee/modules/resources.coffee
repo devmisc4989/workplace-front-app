@@ -103,6 +103,9 @@ urls = {
     "epic-related-userstories": "/epics/%s/related_userstories"
     "epic-related-userstories-bulk-create": "/epics/%s/related_userstories/bulk_create"
 
+    # Rooms
+    "rooms": "/rooms"
+
     # User stories
     "userstories": "/userstories"
     "bulk-create-us": "/userstories/bulk_create"

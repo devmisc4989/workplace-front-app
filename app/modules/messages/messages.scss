@@ -1,0 +1,80 @@
+.header-with-message {
+    h1, h4 {
+        color: #5b8200;
+        transition: color .3s linear;
+        margin: 0;
+    }
+}
+
+.messages {
+    .container {
+        height: calc(100vh - 165px);
+        margin: 10px 0;
+        position: relative;
+
+        .message-container {
+            height: calc(100% - 170px);
+            margin: 10px 0;
+            border: 1px solid #e4e3e3;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        .text-containter {
+            height: 80px;
+            textarea{
+                outline: none;
+            }
+        }
+    }
+}
+
+.message {
+    .sender {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        img {
+            border: 2px solid #fff;
+            border-radius: 8%;
+            -ms-flex-preferred-size: 40px;
+            flex-basis: 40px;
+            -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+            flex-grow: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            width: 40px;            
+        }
+
+        .sender-data{
+            margin-left: 10px;
+            .sender-name{
+                width: 100%;
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                color: #5b8200;
+            }
+
+            .sent-time{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%;
+                font-size: 12px;
+                color: #767676;
+            }
+        }
+    }
+
+    .content{
+        padding-left: 50px;
+        margin: 5px 0;
+        display: block;
+    }
+}

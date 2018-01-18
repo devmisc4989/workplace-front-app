@@ -61,6 +61,14 @@ momentFormat = ->
 module.filter("momentFormat", momentFormat)
 
 
+momentTimeStampFormat = ->
+    return (input, format) ->
+        if input
+            return moment(new Date(input)).format(format)
+        return ""
+
+module.filter("momentTimeStampFormat", momentTimeStampFormat)
+
 momentFromNow = ->
     return (input, without_suffix) ->
         if input

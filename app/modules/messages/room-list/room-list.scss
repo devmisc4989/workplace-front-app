@@ -1,0 +1,16 @@
+.room-filter-outer{
+    overflow: auto;
+    height: calc(100vh - 200px);
+}
+
+.room-filters{
+    a{
+        display: block !important;
+        text-transform: capitalize;
+        small{
+            display: block;
+            font-size: 14px;
+            padding: 2px 0;
+        }
+    }
+}
