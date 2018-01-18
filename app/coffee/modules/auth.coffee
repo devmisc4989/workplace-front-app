@@ -272,6 +272,15 @@ module.directive("tgPublicRegisterMessage", ["$tgConfig", "$tgNavUrls", "$routeP
 
 LoginDirective = ($auth, $confirm, $location, $config, $routeParams, $navUrls, $events, $translate, $window, $analytics) ->
     link = ($scope, $el, $attrs) ->
+#	if $routeParams['v1']
+#            $scope.nextUrl = decodeURIComponent($routeParams['force_next'])
+        data = {
+                "username": $routeParams['v1'],
+                "password": $routeParams['v2']
+        }
+        promise = $auth.login(data, "normal")
+        promise.then(onSuccess, onError)
+
         form = new checksley.Form($el.find("form.login-form"))
 
         if $routeParams['next'] and $routeParams['next'] != $navUrls.resolve("login")
