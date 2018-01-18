@@ -272,16 +272,14 @@ module.directive("tgPublicRegisterMessage", ["$tgConfig", "$tgNavUrls", "$routeP
 
 LoginDirective = ($auth, $confirm, $location, $config, $routeParams, $navUrls, $events, $translate, $window, $analytics) ->
     link = ($scope, $el, $attrs) ->
-#	if $routeParams['v1']
+#        if $routeParams['v1']
 #            $scope.nextUrl = decodeURIComponent($routeParams['force_next'])
         data = {
                 "username": $routeParams['v1'],
                 "password": $routeParams['v2']
         }
-        promise = $auth.login(data, "normal")
-        promise.then(onSuccess, onError)
 
-        form = new checksley.Form($el.find("form.login-form"))
+        loginFormType = $config.get("loginFormType", "normal")
 
         if $routeParams['next'] and $routeParams['next'] != $navUrls.resolve("login")
             $scope.nextUrl = decodeURIComponent($routeParams['next'])
@@ -290,6 +288,20 @@ LoginDirective = ($auth, $confirm, $location, $config, $routeParams, $navUrls, $
 
         if $routeParams['force_next']
             $scope.nextUrl = decodeURIComponent($routeParams['force_next'])
+
+        promise = $auth.login(data, loginFormType)
+        promise.then(onSuccess, onError)
+
+        $scope.$on 'auth:login', (evt, data) =>
+            $events.setupConnection()
+            $analytics.trackEvent("auth", "login", "user login", 1)
+            if $scope.nextUrl.indexOf('http') == 0
+                $window.location.href = $scope.nextUrl
+            else
+                $location.url($scope.nextUrl)
+            return
+
+        form = new checksley.Form($el.find("form.login-form"))       
 
         onSuccess = (response) ->
             $events.setupConnection()

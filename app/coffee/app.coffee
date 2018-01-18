@@ -500,7 +500,7 @@ configure = ($routeProvider, $locationProvider, $httpProvider, $provide, $tgEven
     )
 
     # Auth
-    $routeProvider.when("/login/:v1/:v2",
+    $routeProvider.when("/login",
         {
             templateUrl: "auth/login.html",
             title: "LOGIN.PAGE_TITLE",
