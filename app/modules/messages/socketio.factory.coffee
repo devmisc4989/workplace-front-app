@@ -1,6 +1,6 @@
 
 Socket = (@rootScope) ->
-    socket = io.connect("http://localhost:8890")
+    socket = io.connect("https://project.joinbrix.com")
 
     on: (eventName, callback) ->
         socket.on(eventName, callback)
