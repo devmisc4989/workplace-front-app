@@ -29,6 +29,8 @@ services = [
     "tgStatsResource",
     "tgWikiHistory",
     "tgEpicsResource",
+    "tgRoomsResource",
+    "tgMessagesResource",
     "tgTrelloImportResource",
     "tgJiraImportResource",
     "tgGithubImportResource",

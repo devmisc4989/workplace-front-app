@@ -240,6 +240,24 @@ configure = ($routeProvider, $locationProvider, $httpProvider, $provide, $tgEven
         }
     )
 
+    $routeProvider.when("/messages",
+        {
+            templateUrl: "messages/messages.html",
+            loader: true,
+            controller: "MessagesCtrl",
+            controllerAs: "vm"
+        }
+    )
+
+    $routeProvider.when("/messages/:slug",
+        {
+            templateUrl: "messages/messages.html",
+            loader: true,
+            controller: "MessagesCtrl",
+            controllerAs: "vm"
+        }
+    )
+
     # Milestone
     $routeProvider.when("/project/:pslug/taskboard/:sslug",
         {
@@ -882,6 +900,7 @@ modules = [
     "taigaHistory",
     "taigaWikiHistory",
     "taigaEpics",
+    "taigaMessages",
     "taigaUtils"
 
     # template cache

@@ -52,6 +52,7 @@ urls = {
     "not-found": "/not-found"
     "permission-denied": "/permission-denied"
 
+    "messages": "/messages"
     "discover": "/discover"
     "discover-search": "/discover/search"
 

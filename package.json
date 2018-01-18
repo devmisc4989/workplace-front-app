@@ -136,6 +136,7 @@
     "prismjs": "^1.6.0",
     "raven-js": "^3.7.0",
     "showdown": "^1.4.3",
+    "socket.io": "^2.0.4",
     "to-markdown": "^3.0.1"
   }
 }

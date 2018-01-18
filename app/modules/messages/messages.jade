@@ -1,0 +1,36 @@
+.wrapper(ng-init="vm.loadInitialData()")
+    tg-project-menu
+    sidebar.menu-secondary
+        section.room-filters
+            div.room-filters-inner
+                header
+                    h1(translate="MESSAGES.ROOM.TITLE")
+
+                form.search-in
+                    fieldset
+                        input(type="text", placeholder="{{'MESSAGES.ROOM.PLACEHOLDER_INPUT_SEARCH' | translate}}", ng-model="vm.filtersQ")
+                        .icon-search-wrapper
+                            tg-svg(
+                                svg-icon="icon-search",
+                                title="{{'COMMON.FILTERS.TITLE_ACTION_FILTER_BUTTON' | translate}}"
+                            )
+            div.room-filter-outer
+                tg-room-list(room="vm.slug")
+        
+    section.main.messages(role="main")
+        header.header-with-message
+            h1 {{vm.roomTitle}}
+            h4 {{vm.roomProject}}
+
+        main.container(ng-if="vm.slug")
+            div.message-container(tg-scroll-bottom="vm.messages")
+                .row.message(ng-repeat="message in vm.messages")
+                    .sender(ng-if="vm.messages[$index - 1].sender.id != message.sender.id")
+                        img(tg-avatar="message.sender", tg-bo-alt="message.sender.full_name")
+                        .sender-data
+                            label.sender-name {{message.sender.full_name}}
+                            label.sent-time {{message.sent_time | momentTimeStampFormat:'YYYY/MM/DD HH:mm'}}
+                    label.content {{message.content}}
+                .bottom(id="message_bottom")
+            div.text-containter
+                textarea(ng-model="vm.message_text" ng-keypress="vm.sendMessage($event)")

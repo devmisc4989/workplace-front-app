@@ -16,7 +16,7 @@ nav.navbar(ng-if="vm.isEnabledHeader")
             include ../../svg/logo.svg
 
         a(
-            href="https://tree.taiga.io/support/",
+            href="{{ vm.supportUrl }}",
             target="_blank",
             title="{{'PROJECT.NAVIGATION.HELP_TITLE' | translate}}",
             translate="PROJECT.NAVIGATION.HELP"
@@ -38,6 +38,13 @@ nav.navbar(ng-if="vm.isEnabledHeader")
         )
 
     div.nav-right(ng-if="vm.isAuthenticated")
+        a(
+            href="#",
+            tg-nav="messages",
+            title="{{'PROJECT.NAVIGATION.MESSAGE_TITLE' | translate}}",
+        )
+            tg-svg(svg-icon="icon-team")
+
         a(
             tg-nav="home"
             ng-class="{active: vm.active}"
