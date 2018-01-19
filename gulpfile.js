@@ -45,7 +45,7 @@ if (argv.theme) {
     themes.set(argv.theme);
 }
 
-var version = "v-" + Date.now();
+var version = "v-1516386726182";// + Date.now();
 
 var paths = {};
 paths.app = "app/";
