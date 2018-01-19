@@ -289,6 +289,9 @@ LoginDirective = ($auth, $confirm, $location, $config, $routeParams, $navUrls, $
         if $routeParams['force_next']
             $scope.nextUrl = decodeURIComponent($routeParams['force_next'])
 
+        if $auth.getUser()
+            $auth.logout(onSuccess, onError)
+
         promise = $auth.login(data, loginFormType)
         promise.then(onSuccess, onError)
 
