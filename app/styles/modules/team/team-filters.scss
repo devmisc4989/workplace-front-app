@@ -1,3 +1,7 @@
+.team-filters-inner {
+    padding: 0 1rem 0 0.375rem;
+}
+
 .team-filters,
 .room-filters {
     .search-in {
@@ -7,8 +11,6 @@
     li {
         @include font-size(large);
         @include font-type(text);
-        border-bottom: 1px solid $gray-light;
-        text-transform: uppercase;
         &:last-child {
             border-bottom: 0;
         }
@@ -23,10 +25,11 @@
         align-items: center;
         display: flex;
         justify-content: space-between;
-        padding: 1rem 0 1rem 1rem;
+        padding: 1rem 0 1rem 0;
+        color: $sidebar-text-color;
         &:hover,
         &.active {
-            color: $primary;
+            color: $white;
             transition: color .3s linear;
             .icon {
                 fill: currentColor;

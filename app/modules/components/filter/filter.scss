@@ -26,18 +26,23 @@ tg-filter {
     form {
         padding: 0 1rem;
     }
-    input {
-        background: $grayer;
+    input[type="text"] {
+        border: 2px solid $grayer;
+        padding: 10px;
         color: $white;
         padding-right: 2rem;
         @include placeholder {
-            color: $gray-light;
+            color: $grayer;
+            opacity: 1;
         }
     }
     .search-action {
         position: absolute;
         right: .7rem;
-        top: .7rem;
+        top: .8125rem;
+    }
+    .icon-search {
+        fill: $white;
     }
     &.open {
         transform: translateX(0);
@@ -58,8 +63,6 @@ tg-filter {
         margin-bottom: 0;
     }
     li {
-        border-bottom: 1px solid $gray-light;
-        text-transform: uppercase;
         &.selected {
             border-bottom: 0;
         }
@@ -71,17 +74,19 @@ tg-filter {
     }
     .filters-cat-single {
         align-items: center;
-        color: $grayer;
+        color: $sidebar-text-color;
         display: flex;
         justify-content: space-between;
         padding: .5rem .5rem .5rem 1.5rem;
         transition: color .2s ease-in;
+        .icon {
+            fill: $sidebar-text-color;
+        }
         &:hover,
         &.selected {
-            background-color: rgba(darken($whitish, 10%), 1);
-            color: $grayer;
-            transition: background-color .2s ease-in;
+            color: $white;
             .icon {
+                color: $sidebar-text-color;
                 opacity: 1;
                 transition: opacity .2s ease-in;
             }
@@ -100,17 +105,17 @@ tg-filter {
 .single-filter {
     @include font-type(text);
     @include clearfix;
+    color: $sidebar-text-color;
     align-items: center;
-    background: darken($whitish, 5%);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     margin-bottom: .5rem;
-    opacity: .5;
     padding-right: .5rem;
     position: relative;
     &:hover {
-        background: darken($whitish, 8%);
+        background: none;
+        color: $white;
         opacity: 1;
         transition: opacity .2s linear;
     }
@@ -125,12 +130,13 @@ tg-filter {
         padding: 8px 10px;
     }
     .name {
+        color: $sidebar-text-color;
         @include ellipsis(100%);
         display: block;
         width: 100%;
     }
     .number {
-        background: darken($whitish, 20%); // Fallback
+
         position: absolute;
         right: 0;
         top: 0;

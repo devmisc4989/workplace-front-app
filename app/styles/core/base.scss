@@ -57,6 +57,9 @@ body {
     min-width: 0;
     padding: 1rem;
     width: 320px;
+    h1 {
+        text-transform: capitalize;
+    }
     .search-in {
         margin-top: .5rem;
     }

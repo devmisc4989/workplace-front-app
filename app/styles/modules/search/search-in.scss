@@ -1,18 +1,20 @@
 .search-in {
-    input {
-        background: $grayer;
+    input[type="text"] {
+        border: 2px solid $grayer;
+        padding: 10px;
         color: $white;
         @include placeholder {
-            color: $gray-light;
+            color: $grayer;
+            opacity: 1;
         }
     }
     .icon-search-wrapper {
         position: absolute;
         right: .7rem;
-        top: .7rem;
+        top: .8125rem;
     }
     .icon-search {
-        fill: $gray-light;
+        fill: $white;
     }
     .loading-spinner {
         margin-top: .1rem;

@@ -1,11 +1,12 @@
 // Typography
+
 // Font face
 
 @each $font-face in
-OpenSans-CondLight,
-OpenSans-Light,
-OpenSans-Regular,
-OpenSans-Semibold {
+Ubuntu-Regular,
+Ubuntu-Medium,
+Ubuntu-Light,
+Ubuntu-Bold {
     @font-face {
         font-family: '#{$font-face}';
         src: url('../fonts/#{$font-face}.ttf') format('truetype');
@@ -43,12 +44,13 @@ h1 {
     text-transform: uppercase;
 
     span {
-        @include font-size(larger);
+        @include font-size(xlarge);
         margin-right: .5rem;
         overflow: hidden;
         text-overflow: ellipsis;
         vertical-align: bottom;
         white-space: nowrap;
+        text-transform: capitalize;
 
         &.green,
         &:last-child {

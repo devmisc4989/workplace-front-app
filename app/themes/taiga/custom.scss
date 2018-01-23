@@ -10,12 +10,12 @@ body {
 
 // Main
 .master {
-    background: $white;
+    background: $main-bgr-color;
 }
 
 // Secondary panel
 .menu-secondary {
-    background: $mass-white;
+    background: $dark-bgr;
 }
 
 // Tertiary panel
@@ -37,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: $blackish;
+    color: $primary-dark;
 }
 
 a {
@@ -61,9 +61,10 @@ input[type="date"],
 input[type="password"],
 select,
 textarea {
-    background: $mass-white;
+    background: transparent;
     border-color: $gray-light;
     color: $grayer;
+    border-radius: 5px;
     @include placeholder {
         color: lighten($gray-light, 10%);
     }
@@ -107,16 +108,12 @@ cite {
 
 // Top navigation bar
 .navbar {
-    background: rgba($black, .5);
-    &::after {
-        background: url('../images/menu-vert.png') repeat top left;
-    }
+    background: white;
 }
 
 //In project left navigation bar
 tg-project-menu {
     background-color: $primary-dark;
-    background-image: url('../images/menu.png');
 }
 
 .main-nav {

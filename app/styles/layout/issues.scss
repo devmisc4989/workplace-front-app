@@ -2,8 +2,13 @@
     .filters-bar {
         position: relative;
         width: 260px;
+        h1 {
+            color: $white;
+        }
     }
     tg-filter {
         transform: translateX(0);
+        background: $dark-bgr;
+        color: $white;
     }
 }

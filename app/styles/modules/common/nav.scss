@@ -4,7 +4,7 @@ tg-project-menu {
     background-position: 0 -300px;
     display: inline-block;
     min-height: calc(100vh - 40px);
-    min-width: 50px;
+    min-width: 72px;
     padding: 1rem 0;
     position: relative;
     text-transform: uppercase;
@@ -31,7 +31,7 @@ tg-project-menu {
         position: relative;
     }
     a:hover {
-        background: rgba($black, .2);
+        background-color: #343744;
         transition: color .3s linear;
         svg {
             fill: $primary-light;

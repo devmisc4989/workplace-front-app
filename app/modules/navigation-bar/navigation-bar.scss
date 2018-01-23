@@ -24,7 +24,7 @@ $dropdown-width: 350px;
     }
     .nav-left {
         a {
-            color: $white;
+            color: $red;
             padding: .5rem 1.5rem;
         }
         .logo {
@@ -64,6 +64,7 @@ $dropdown-width: 350px;
             padding: 0;
             padding-left: 2rem;
             text-align: right;
+            color: #052847;
             span {
                 padding-right: 1rem;
             }
