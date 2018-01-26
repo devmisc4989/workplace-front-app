@@ -1,5 +1,6 @@
 .profile {
     display: flex;
+    flex-direction: row-reverse;
     min-height: $main-height;
     padding: 2rem 0;
     .profile-bar {

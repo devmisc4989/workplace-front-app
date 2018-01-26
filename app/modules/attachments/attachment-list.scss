@@ -45,11 +45,11 @@
         flex-basis: 10%;
         flex-grow: 0;
         flex-shrink: 0;
-        justify-content: space-around;
+        justify-content: flex-end;
         margin-left: auto;
-        .settings {
-            opacity: 0;
-        }
+        // .settings {
+        //     opacity: 0;
+        // }
         .editable-settings {
             display: block;
             opacity: 1;

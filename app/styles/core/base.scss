@@ -39,7 +39,7 @@ body {
 }
 
 .centered {
-    margin: 1rem auto;
+    margin: 0 auto;
     max-width: 1200px;
     min-width: 960px;
     width: 90%;
@@ -105,4 +105,8 @@ body {
     h1 {
         margin-bottom: 0;
     }
+}
+
+.w-auto {
+    width: auto!important;
 }

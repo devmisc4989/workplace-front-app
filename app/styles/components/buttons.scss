@@ -10,7 +10,6 @@
     display: inline-block;
     padding: .6rem 2rem;
     text-align: center;
-    text-transform: uppercase;
     transition: all .2s linear;
     vertical-align: middle;
     &:hover {
@@ -89,6 +88,18 @@ a.button-green {
         color: $white;
     }
 }
+
+.button-theme,
+a.button-theme {
+    @extend %button;
+    background: $red;
+    &:hover,
+    &.active {
+        background: darken($red, 10%);
+        color: $white;
+    }
+}
+
 .button-gray,
 a.button-gray {
     @extend %button;
@@ -122,16 +133,16 @@ a.button-gray {
 
 .button-bulk {
     @extend %button;
-    background: $primary;
+    background: $white;
     padding: .55rem .75rem;
     .icon {
-        fill: currentColor;
+        fill: $sidebar-text-color;
         margin-right: 0;
         position: relative;
         top: 1px;
     }
     &:hover {
-        background: $primary-light;
+        background: $gray-light;
     }
 }
 .button-auth {

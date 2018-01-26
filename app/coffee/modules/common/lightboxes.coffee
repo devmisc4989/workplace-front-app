@@ -398,7 +398,7 @@ CreateEditUserstoryDirective = ($repo, $model, $rs, $rootScope, lightboxService,
             resetAttachments()
 
             # Update texts for edition
-            $el.find(".button-green").html($translate.instant("COMMON.SAVE"))
+            $el.find(".button-theme").html($translate.instant("COMMON.SAVE"))
             $el.find(".title").html($translate.instant("LIGHTBOX.CREATE_EDIT_US.EDIT_US"))
             $el.find(".tag-input").val("")
 

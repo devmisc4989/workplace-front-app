@@ -14,14 +14,34 @@ input[type="date"],
 input[type="password"],
 select,
 textarea {
-    border: 1px solid;
+    border: 1px solid $gray-light;
     margin: 0;
-    padding: 8px;
+    padding: 12px 14px;
     width: 100%;
+    color: $sidebar-text-color;
     &.checksley-error {
         transition: border .3s linear;
     }
+
+    &::placeholder {
+      color: $sidebar-text-color!important;
+      opacity: 1!important;
+    }
 }
+
+select {
+    padding-right: 0.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../images/icons/arrow---down.svg")!important;
+    background-origin: content-box!important;
+    background-position: right -1rem center!important;
+    background-repeat: no-repeat!important;
+    background-size: 10px 5px!important;
+    padding-right: 1.5rem;
+}
+
 button,
 button:active,
 button:focus {

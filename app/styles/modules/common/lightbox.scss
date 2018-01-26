@@ -1,8 +1,32 @@
 .lightbox {
     @include lightbox;
+    background: rgba(0, 0, 0, 0.5);
     h2 {
-        @include font-size(xlarge);
-        @include font-type(light);
+        @include font-size(larger);
+        @include font-type(bold);
+        margin-bottom: 2.5rem;
+    }
+
+    fieldset {
+        margin-bottom: 1.125rem;
+    }
+
+    &.lightbox-create-issue {
+        form {
+            background: $white;
+            padding: 50px;
+            text-align: center;
+            @include breakpoint(desktop) {
+                padding: 60px 164px;
+                width: 946px;
+                max-width: 946px;
+                flex-basis: 946px;
+            }
+        }
+    }
+
+    .close {
+        fill: $white;
     }
 }
 
@@ -107,6 +131,8 @@
         overflow-y: auto;
     }
     .attachment-delete {
+        position: relative;
+        top: 0.125rem;
         right: .5rem;
         svg {
             fill: $gray-light;
@@ -126,6 +152,9 @@
         flex-basis: 600px;
         flex-grow: 0;
         max-width: 600px;
+        background: $white;
+        padding: 50px;
+        text-align: center;
     }
     textarea {
         max-height: 12rem;
@@ -433,6 +462,8 @@
         flex-basis: 600px;
         flex-grow: 0;
         width: 600px;
+        background: $white;
+        padding: 50px;
     }
     .user-list-single {
         &:hover,
@@ -459,7 +490,7 @@
         text-align: center;
         .icon-close {
             cursor: pointer;
-            fill: $gray;
+            fill: $white;
             position: absolute;
             right: 0;
             top: 0;

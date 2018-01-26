@@ -43,12 +43,12 @@ $dropdown-width: 350px;
     .nav-right {
         margin-left: auto;
         a {
-            color: $white;
+            color: $grayer;
             padding: .5rem 2rem;
         }
         svg {
             @include svg-size(1.2rem);
-            fill: rgba($primary-dark, .8);
+            fill: $menu-color;
             transition: all .2s linear;
         }
     }
@@ -57,9 +57,9 @@ $dropdown-width: 350px;
         display: inline-block;
         transition: all .2s linear;
         &:hover {
-            color: $primary-light;
+            color: $sidebar-text-color;
             svg {
-                fill: $white;
+                fill: $sidebar-text-color;
             }
 
         }
@@ -69,8 +69,8 @@ $dropdown-width: 350px;
             flex-direction: row-reverse;
             position: relative;
             min-width: 200px;
-            padding: 0;
-            padding-left: 1.875rem;
+            height: $navbar;
+            padding: 0 1.875rem;
             text-align: right;
             color: #052847;
             border-left: 1px solid $border-color;
@@ -109,6 +109,7 @@ $dropdown-width: 350px;
         }
     }
     .navbar-dropdown {
+        top: 100%!important;
         a {
             padding: .8rem .5rem;
         }

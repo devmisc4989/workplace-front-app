@@ -3,6 +3,7 @@
     .activity-item {
         border-bottom: 1px solid $whitish;
         padding: 1rem .5rem 1rem 0;
+        background: $white;
         position: relative;
         p {
             margin-bottom: 0;
@@ -17,6 +18,9 @@
         }
         a:hover {
             color: $primary-light;
+        }
+        img {
+            border-radius: 50%;
         }
         blockquote {
             line-height: 1.4rem;
