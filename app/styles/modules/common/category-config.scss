@@ -1,7 +1,13 @@
+.general-category-wrapper {
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
 .category-config {
-    border-bottom: 1px solid $gray-light;
+    border-bottom: 2px solid $border-color;
     &:first-child {
-        border-top: 1px solid $gray-light;
+        border-top: 1px solid $border-color;
     }
     .resume {
         align-items: space-between;
@@ -33,11 +39,12 @@
         .role-summary-single {
             background: $gray-light;
             display: inline-block;
-            height: 20px;
+            height: 15px;
             margin-right: .1rem;
             width: 15px;
+            border-radius: 50%;
             &.active {
-                background: $primary;
+                background: $red;
             }
             &.inactive {
                 background: $gray;

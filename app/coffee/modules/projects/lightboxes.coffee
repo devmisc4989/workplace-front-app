@@ -66,7 +66,7 @@ DeleteProjectDirective = ($repo, $rootscope, $auth, $location, $navUrls, $confir
             event.preventDefault()
             lightboxService.close($el)
 
-        $el.on "click", ".button-green", (event) ->
+        $el.on "click", ".button-theme", (event) ->
             event.preventDefault()
             submit()
 

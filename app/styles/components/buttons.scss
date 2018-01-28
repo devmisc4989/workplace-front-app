@@ -1,7 +1,5 @@
 .button,
 %button {
-    @include font-type(light);
-    @include font-size(small);
     background: transparent;
     border: 0;
     border-radius: 3px;
@@ -76,10 +74,10 @@
 }
 
 .submit-button {
-    width: 100%;
+    width: auto;
 }
-.button-green,
-a.button-green {
+.button-theme,
+a.button-theme {
     @extend %button;
     background: $primary;
     &:hover,
@@ -103,10 +101,11 @@ a.button-theme {
 .button-gray,
 a.button-gray {
     @extend %button;
-    background: $gray;
+    background: $gray-light;
+    text-transform: capitalize;
     &:hover,
     &.active {
-        background: $primary-light;
+        background: darken($gray-light, 5%);
         color: $white;
     }
 }

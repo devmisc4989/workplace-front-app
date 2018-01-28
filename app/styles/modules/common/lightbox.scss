@@ -25,6 +25,11 @@
         }
     }
 
+    .button-theme {
+        width: auto;
+        margin: 0 auto;
+    }
+
     .close {
         fill: $white;
     }
@@ -35,6 +40,8 @@
         flex-basis: 600px;
         flex-grow: 0;
         max-width: 600px;
+        background: $white;
+        padding: 50px;
     }
 
     fieldset {
@@ -228,6 +235,8 @@
         flex-basis: 420px;
         flex-flow: 0;
         max-width: 420px;
+        background: $white;
+        padding: 50px;
     }
     .subtitle,
     .message {
@@ -236,12 +245,13 @@
         text-align: center;
     }
     .subtitle {
-        @include font-size(large);
+        @include font-size(bg-medium);
         @include font-type(text);
         white-space: pre-line;
     }
     .options {
         display: flex;
+        padding-top: 1.25rem;
         a {
             padding: 8px 0;
             text-align: center;

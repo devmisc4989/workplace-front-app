@@ -17,12 +17,15 @@
 .help-markdown,
 .help-button {
     @include font-size(xsmall);
+    display: flex;
+    margin-top: auto;
     &:hover {
+        color: $red;
         span {
             transition: color .2s linear;
         }
         .icon {
-            fill: $primary-light;
+            fill: $red;
             transition: fill .2s linear;
         }
     }

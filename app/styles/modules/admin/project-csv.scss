@@ -1,3 +1,8 @@
+.admin-attributes-section-wrapper {
+    background: $white;
+    border-radius: 5px;
+    padding: 1.25rem;
+}
 .project-csv {
     margin-bottom: 2.5rem;
     .project-values-title {
@@ -12,6 +17,9 @@
         a {
             @include font-size(small);
             min-width: 110px;
+            &:hover {
+                color: $red;
+            }
         }
         .icon:not(.icon-clipboard) {
             fill: currentColor;

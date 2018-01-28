@@ -18,13 +18,14 @@
             position: relative;
             top: 1px;
             transition: color .2s linear;
+            border-radius: 5px 5px 0 0;
             .icon {
                 color: $primary;
             }
         }
     }
     .icon {
-        fill: $tabs-color;
+        fill: $sidebar-text-color;
         height: .8rem;
         margin-right: .5rem;
         transition: fill .2s linear;

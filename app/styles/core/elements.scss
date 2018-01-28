@@ -127,3 +127,12 @@ div.awesomplete {
         }
     }
 }
+
+.default-values {
+    background: $white;
+    border-radius: 5px;
+    padding: 1.25rem;
+    form {
+        text-align: center;
+    }
+}

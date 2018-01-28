@@ -5,6 +5,10 @@
         h1 {
             color: $white;
         }
+        form {
+            background: transparent;
+            padding: 0 1rem;
+        }
     }
     tg-filter {
         transform: translateX(0);

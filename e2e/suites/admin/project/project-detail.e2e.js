@@ -137,7 +137,7 @@ describe('project detail', function() {
 
         await utils.lightbox.open(changeOwnerSuccessLb);
 
-        changeOwnerSuccessLb.$('.button-green').click();
+        changeOwnerSuccessLb.$('.button-theme').click();
 
         await utils.lightbox.close(changeOwnerSuccessLb);
     });

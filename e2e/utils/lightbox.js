@@ -69,7 +69,7 @@ lightbox.confirm.ok = async function() {
     let lb = $('.lightbox-generic-ask');
     await lightbox.open(lb);
 
-    lb.$('.button-green').click();
+    lb.$('.button-theme').click();
 
     await lightbox.close(lb);
 };

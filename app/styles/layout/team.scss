@@ -1,10 +1,5 @@
 .team {
     h2 {
-        margin: 1rem 0;
-        span {
-            &:last-child {
-                color: $primary;
-            }
-        }
+        margin: 1.25rem 0 .25rem;
     }
 }

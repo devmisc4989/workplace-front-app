@@ -1,7 +1,19 @@
+.table-team-wrapper {
+    background: $white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: .5rem 0;
+    h2 {
+        padding: 0 1.875rem;
+        color: $gray-light;
+        @include font-size(xsmall);
+    }
+}
+
 .basic-table {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0 1.875rem;
     .row {
         align-items: center;
         border-bottom: 1px solid darken($whitish, 4%);

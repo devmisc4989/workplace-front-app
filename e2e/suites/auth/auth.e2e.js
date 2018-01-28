@@ -194,7 +194,7 @@ describe('auth', function() {
 
                 utils.common.takeScreenshot('auth', 'remember-password-success');
 
-                $('.lightbox-generic-success .button-green').click();
+                $('.lightbox-generic-success .button-theme').click();
 
                 await utils.lightbox.close('.lightbox-generic-success');
             });

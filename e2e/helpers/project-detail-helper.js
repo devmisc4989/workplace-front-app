@@ -47,7 +47,7 @@ helper.changeOwner = function() {
 };
 
 helper.acceptRequestOwnership = function() {
-    helper.requestOwnershipLb().$('.button-green').click();
+    helper.requestOwnershipLb().$('.button-theme').click();
 };
 
 helper.changeOwnerSuccessLb = function() {

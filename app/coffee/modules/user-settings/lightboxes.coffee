@@ -59,7 +59,7 @@ DeleteUserDirective = ($repo, $rootscope, $auth, $location, $navUrls, lightboxSe
                 currentLoading.finish()
                 console.log "FAIL"
 
-        $el.on "click", ".button-green", (event) ->
+        $el.on "click", ".button-theme", (event) ->
             event.preventDefault()
             lightboxService.close($el)
 

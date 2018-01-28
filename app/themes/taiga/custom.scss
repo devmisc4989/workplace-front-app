@@ -11,7 +11,6 @@ body {
 // Main
 .master {
     background: $main-bgr-color;
-    padding-top: 30px;
 }
 
 // Secondary panel
@@ -63,11 +62,12 @@ input[type="password"],
 select,
 textarea {
     background: transparent;
-    border-color: $gray-light;
+    border-color: $mass-white;
     color: $grayer;
     border-radius: 5px;
     @include placeholder {
-        color: lighten($gray-light, 10%);
+        color: $gray-light;
+        opacity: 1;
     }
     &.checksley-error {
         border: 1px solid $red;

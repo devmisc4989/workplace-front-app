@@ -3,6 +3,9 @@
         margin: 1rem 0;
         max-width: 700px;
         width: 100%;
+        background: $white;
+        border-radius: 5px;
+        padding: 1.25rem;
     }
     input,
     textarea {
@@ -27,15 +30,22 @@
     .select-input-text {
         .field-with-option {
             display: flex;
+            input {
+                border-radius: 5px 0 0 5px!important;
+            }
         }
         .option-wrapper {
             align-items: center;
-            border: 1px solid $gray-light;
+            background: $grayer;
             border-left: 0;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
             display: flex;
             padding: 0 1rem;
+            margin-left: -1px;
+            .icon {
+                fill: $white;
+            }
         }
         .help-copy {
             @include font-size(small);

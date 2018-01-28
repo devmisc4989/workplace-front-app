@@ -54,7 +54,7 @@ describe('attributes - points', function() {
 
         utils.common.takeScreenshot('attributes', 'delete-point');
 
-        el.$('.button-green').click();
+        el.$('.button-theme').click();
 
         await utils.lightbox.close(el);
 

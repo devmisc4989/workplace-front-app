@@ -5,6 +5,7 @@ $dropdown-width: 350px;
     height: $navbar;
     justify-content: space-between;
     position: relative;
+    border-bottom: 1px solid $border-color;
     &::after {
         background-size: 200%;
         bottom: 0;
@@ -127,8 +128,8 @@ $dropdown-width: 350px;
 
 .navbar-dropdown {
     @extend %dropdown;
-    background: $blackish;
-    border: 1px solid $black;
+    background: $dark-bgr;
+    border: none;
     padding: .3rem;
     &.dropdown-user {
         left: calc(50% - 200px/2);
@@ -138,10 +139,20 @@ $dropdown-width: 350px;
         }
     }
     ul {
-        @include arrow('bottom', $blackish, $blackish, 1, 8);
+        @include arrow('bottom', $dark-bgr, $dark-bgr, 1, 8);
         margin: 0;
         margin-bottom: .5rem;
         padding: 0;
+        &:after {
+            content: normal;
+        }
+        li {
+            a {
+                &:hover {
+                    background: $grayer;
+                }
+            }
+        }
     }
     .plugin {
         &:hover {
@@ -158,17 +169,16 @@ $dropdown-width: 350px;
         }
     }
     a {
-        color: $gray-light;
+        color: $gray-light!important;
         display: block;
         padding: .8rem .5rem;
         &:hover {
-            background: rgba($white, .1);
-            color: $primary-light;
+            color: $white!important;
         }
         &.see-more-projects-btn,
         &.create-organization-btn,
         &.create-project-btn {
-            color: $white;
+            color: $white!important;
             text-align: center;
             &:hover {
                 color: $white;

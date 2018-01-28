@@ -2,32 +2,34 @@
     .module-container {
         max-width: 900px;
         width: 100%;
+        background: $white;
+        border-radius: 5px;
+        padding: 1.25rem;
     }
     .module {
         align-content: center;
         align-items: flex-start;
-        border-bottom: 1px solid $whitish;
+        border-bottom: 2px solid $border-color;
         display: flex;
         padding: 1rem 0;
         &.active {
             .module-icon .icon,
             .module-name {
-                color: $primary;
-                fill: $primary;
+                color: $primary-dark;
+                fill: $red;
             }
         }
     }
     .module-icon {
-        flex-basis: 3rem;
+        flex-basis: 2rem;
         flex-shrink: 0;
         margin: 0 .5rem 0 0;
         .icon {
-            @include svg-size(3rem);
+            @include svg-size(2rem);
             fill: $gray-light;
         }
     }
     .module-name {
-        @include font-type(bold);
         @include font-size(large);
         color: $gray-light;
         flex-basis: 100px;

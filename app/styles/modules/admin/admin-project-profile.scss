@@ -44,6 +44,17 @@
             color: $red;
         }
     }
+
+    .submit-inline {
+        display: flex;
+        align-items: center;
+        .submit-button {
+            min-width: 175px;
+        }
+        .delete-project {
+            margin: 0 0 0 1rem;
+        }
+    }
     .private-or-public {
         @include font-size(x-small);
         color: $gray-light;

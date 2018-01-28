@@ -53,7 +53,7 @@ describe('attributes - priorities', function() {
 
         utils.common.takeScreenshot('attributes', 'delete-priority');
 
-        el.$('.button-green').click();
+        el.$('.button-theme').click();
 
         await utils.lightbox.close(el);
 

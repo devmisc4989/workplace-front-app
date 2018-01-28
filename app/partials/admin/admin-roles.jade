@@ -37,12 +37,13 @@ div.wrapper.roles(ng-controller="RolesController as ctrl",
         div.general-category.external-user(ng-if="role.external_user")
             span(translate="ADMIN.ROLES.NOTE_EXTERNAL_USERS")
 
-        div.general-category(ng-if="!role.external_user")
-            span(translate="ADMIN.ROLES.HELP_ROLE_ENABLED")
-            div.check
-                input(type="checkbox", ng-model="role.computable", ng-change="ctrl.toggleComputable()")
-                div
-                span.check-text.check-yes(translate="COMMON.YES")
-                span.check-text.check-no(translate="COMMON.NO")
+        div.general-category-wrapper
+            div.general-category(ng-if="!role.external_user")
+                span(translate="ADMIN.ROLES.HELP_ROLE_ENABLED")
+                div.check
+                    input(type="checkbox", ng-model="role.computable", ng-change="ctrl.toggleComputable()")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
 
-        div(tg-role-permissions, ng-model="role")
+            div(tg-role-permissions, ng-model="role")

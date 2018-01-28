@@ -14,7 +14,7 @@ input[type="date"],
 input[type="password"],
 select,
 textarea {
-    border: 1px solid $gray-light;
+    border: 1px solid $mass-white;
     margin: 0;
     padding: 12px 14px;
     width: 100%;
@@ -24,7 +24,7 @@ textarea {
     }
 
     &::placeholder {
-      color: $sidebar-text-color!important;
+      color: $mass-white!important;
       opacity: 1!important;
     }
 }

@@ -271,7 +271,7 @@ helper.blockLightbox = function() {
             await browser.waitForAngular();
         },
         submit: async function() {
-            el.$('a.button-green').click();
+            el.$('a.button-theme').click();
             await browser.waitForAngular();
         }
     };

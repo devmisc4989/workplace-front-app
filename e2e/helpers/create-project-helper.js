@@ -39,5 +39,5 @@ helper.delete = async function() {
 
     await utils.lightbox.open(lb);
 
-    return lb.$('.button-green').click();
+    return lb.$('.button-theme').click();
 };

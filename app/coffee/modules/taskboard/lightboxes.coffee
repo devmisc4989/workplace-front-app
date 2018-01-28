@@ -116,7 +116,7 @@ CreateEditTaskDirective = ($repo, $model, $rs, $rootscope, $loading, lightboxSer
 
             # Update texts for creation
             create = $translate.instant("COMMON.CREATE")
-            $el.find(".button-green").html(create)
+            $el.find(".button-theme").html(create)
 
             newTask = $translate.instant("LIGHTBOX.CREATE_EDIT_TASK.TITLE")
             $el.find(".title").html(newTask + "  ")
@@ -139,7 +139,7 @@ CreateEditTaskDirective = ($repo, $model, $rs, $rootscope, $loading, lightboxSer
             save = $translate.instant("COMMON.SAVE")
             edit = $translate.instant("LIGHTBOX.CREATE_EDIT_TASK.ACTION_EDIT")
 
-            $el.find(".button-green").html(save)
+            $el.find(".button-theme").html(save)
             $el.find(".title").html(edit + "  ")
 
             $el.find(".tag-input").val("")

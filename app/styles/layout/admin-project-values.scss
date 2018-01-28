@@ -1,6 +1,9 @@
 .admin-attributes {
     .admin-attributes-section {
         margin-bottom: 2rem;
+        background: $white;
+        border-radius: 5px;
+        padding: 1.25rem;
         .checksley-error-list {
             height: 0;
             position: relative;

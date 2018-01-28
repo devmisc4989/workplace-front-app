@@ -160,7 +160,7 @@ helper.epic = function() {
 // };
 //
 // helper.openNewIssueLb = function() {
-//     $('.new-issue .button-green').click();
+//     $('.new-issue .button-theme').click();
 // };
 //
 // helper.openBulk = function() {

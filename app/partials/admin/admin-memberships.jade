@@ -17,7 +17,7 @@ div.wrapper.memberships(
                 tg-no-more-memberships-explanation(ng-if="canAddUsers == false", project="project")
 
             .action-buttons
-                button.button-green(
+                button.button-theme(
                     translate="ADMIN.MEMBERSHIPS.ADD_BUTTON"
                     title="{{ ADMIN.MEMBERSHIPS.ADD_BUTTON_TITLE | translate }}",
                     ng-click="ctrl.addNewMembers()"

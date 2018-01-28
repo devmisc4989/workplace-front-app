@@ -3,7 +3,7 @@ var utils = require('../utils');
 var helper = module.exports;
 
 helper.openNewMemberLightbox = function() {
-    $('.header-with-actions .button-green').click();
+    $('.header-with-actions .button-theme').click();
 };
 
 helper.getNewMemberLightbox = function() {

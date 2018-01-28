@@ -39,7 +39,7 @@ describe('edit user profile', function() {
 
         await utils.lightbox.open(lb);
 
-        lb.$('.button-green').click();
+        lb.$('.button-theme').click();
 
         await utils.lightbox.close(lb);
 
