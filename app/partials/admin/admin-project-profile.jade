@@ -50,7 +50,6 @@ div.wrapper(
             .project-details-form-data
 
                 fieldset
-                    label(for="project-name") {{ 'ADMIN.PROJECT_PROFILE.PROJECT_NAME' | translate }}
                     input(
                         type="text"
                         name="name"
@@ -62,7 +61,6 @@ div.wrapper(
                     )
 
                 fieldset
-                    label(for="project-description") {{ 'ADMIN.PROJECT_PROFILE.DESCRIPTION' | translate }}
                     textarea(
                         name="description"
                         ng-attr-placeholder="{{'ADMIN.PROJECT_PROFILE.DESCRIPTION' | translate}}"
@@ -71,7 +69,6 @@ div.wrapper(
                         data-required="true"
                     )
                 fieldset
-                    label(for="tags") {{ 'ADMIN.PROJECT_PROFILE.TAGS' | translate }}
 
                     tg-tag-line-common.tags-block(
                         disable-color-selection
@@ -145,7 +142,8 @@ div.wrapper(
                                 ng-model="project.is_private"
                                 ng-value="false"
                             )
-                            label.trans-button(for="private-project") {{ 'ADMIN.PROJECT_PROFILE.PUBLIC_PROJECT' | translate }}
+                            label.trans-button(for="private-project")
+                            span {{ 'ADMIN.PROJECT_PROFILE.PUBLIC_PROJECT' | translate }}
 
                         div.privacy-option
                             input.privacy-project(
@@ -156,7 +154,8 @@ div.wrapper(
                                 ng-model="project.is_private"
                                 ng-value="true"
                             )
-                            label.trans-button(for="public-project") {{'ADMIN.PROJECT_PROFILE.PRIVATE_PROJECT' | translate }}
+                            label.trans-button(for="public-project")
+                            span {{'ADMIN.PROJECT_PROFILE.PRIVATE_PROJECT' | translate }}
 
                     a.private-or-public(
                         href="https://tree.taiga.io/support/frequently-asked-questions/whats-the-difference-between-public-and-private-projects/"
