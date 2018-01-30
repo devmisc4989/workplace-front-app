@@ -1,4 +1,9 @@
 .admin-common {
+    .admin-common-top {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
     header {
         h1 {
             margin-bottom: 0;

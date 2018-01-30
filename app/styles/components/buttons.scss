@@ -118,7 +118,7 @@ a.button-gray {
         color: $white;
     }
 }
-.button-red {
+.button-default {
     @extend %button;
     background: $red-light;
     &:hover {
@@ -127,6 +127,22 @@ a.button-gray {
     }
     .icon {
         color: $white;
+    }
+}
+
+.button-default {
+    @extend %button;
+    background: $default-color;
+    color: $red!important;
+    span {
+        color: $red!important;
+    }
+    &:hover {
+        background: $gray-light;
+        color: $red!important;
+        span {
+            color: $red!important;
+        }
     }
 }
 

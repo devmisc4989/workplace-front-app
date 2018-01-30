@@ -6,9 +6,11 @@
     position: relative;
     transition: all .2s linear;
     width: 0;
+    background: $dark-bgr;
     tg-filter {
         transform: translateX(-260px);
         transition: all .2s linear;
+        background: $dark-bgr;
     }
     &.active {
         opacity: 1;

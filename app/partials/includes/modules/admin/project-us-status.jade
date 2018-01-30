@@ -1,11 +1,11 @@
 section.project-us-status
 
-    div.project-values-title
-        h2 {{ sectionName | translate }}
-        a.button.button-gray.show-add-new(href="", title="{{'ADMIN.US_STATUS.ACTION_ADD_STATUS' | translate}}")
-            span(translate="ADMIN.US_STATUS.ACTION_ADD_STATUS")
-
     div.colors-table
+        div.project-values-title
+            h2 {{ sectionName | translate }}
+            a.button.button-theme.show-add-new(href="", title="{{'ADMIN.US_STATUS.ACTION_ADD_STATUS' | translate}}")
+                span(translate="ADMIN.US_STATUS.ACTION_ADD_STATUS")
+
         div.table-header
             div.row
                 div.color-column(translate="COMMON.FIELDS.COLOR")

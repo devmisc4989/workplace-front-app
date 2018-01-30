@@ -16,11 +16,11 @@
     padding: 0 1.875rem;
     .row {
         align-items: center;
-        border-bottom: 1px solid darken($whitish, 4%);
+        border-bottom: 2px solid $border-color;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        padding: .3rem 0;
+        padding: 1.25rem 0;
         text-align: left;
         width: 100%;
         @include breakpoint(tablet) {

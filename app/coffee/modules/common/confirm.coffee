@@ -77,7 +77,7 @@ class ConfirmService extends taiga.Service
                         @.hide(el)
             }
 
-        el.on "click.confirm-dialog", ".button-red", (event) =>
+        el.on "click.confirm-dialog", ".button-default", (event) =>
             event.preventDefault()
             defered.reject()
             @.hide(el)
@@ -129,7 +129,7 @@ class ConfirmService extends taiga.Service
                         @.hide(el)
             }
 
-        el.on "click.confirm-dialog", ".button-red", (event) =>
+        el.on "click.confirm-dialog", ".button-default", (event) =>
             event.preventDefault()
             defered.reject()
             @.hide(el)

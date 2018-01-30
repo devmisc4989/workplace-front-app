@@ -49,15 +49,15 @@ $summary-background: $grayer;
                 transition: fill .2s;
             }
             svg {
-                fill: $primary;
+                fill: $primary-light;
             }
         }
         &.active {
             .graph {
-                fill: $primary;
+                fill: $red;
             }
             svg {
-                fill: $primary;
+                fill: $red;
             }
         }
         svg {

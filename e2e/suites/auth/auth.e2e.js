@@ -213,7 +213,7 @@ describe('auth', function() {
 
                 utils.common.takeScreenshot("auth", "delete-account");
 
-                $('.lightbox-delete-account .button-red').click();
+                $('.lightbox-delete-account .button-default').click();
 
                 let url = await browser.getCurrentUrl();
 

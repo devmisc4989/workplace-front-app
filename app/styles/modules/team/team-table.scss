@@ -58,6 +58,7 @@
     .team-header {
         padding: 1rem 0.5rem;
         margin-bottom: 1.5rem;
+        border-bottom: 2px solid $border-color;
         .username {
             color: $primary-dark;
             @include font-size(xlarge);

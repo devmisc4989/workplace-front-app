@@ -1,3 +1,9 @@
+.backlog-table {
+    background: $white;
+    border-radius: 5px;
+    padding: 1.25rem;
+}
+
 .backlog-table-header,
 .backlog-table-body {
     display: flex;

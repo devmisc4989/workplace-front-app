@@ -1,21 +1,30 @@
 .admin-membership-table {
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.875rem;
     .title {
-        @include font-type(bold);
+        color: $gray-light;
     }
     .avatar {
         align-items: center;
         display: flex;
         img {
-            border-radius: 4px;
+            border-radius: 50%;
+            border: none;
             flex-grow: 0;
             margin: 0 .5rem 0 .3rem;
-            width: 50px;
+            width: 70px;
+            height: 70px;
+        }
+        .name {
+            color: $primary-dark;
+            @include font-type(bold);
+            @include font-size(larger);
         }
         .data {
-            @include font-type(light);
-            @include font-size(small);
-            color: $gray;
-            margin-top: .2rem;
+            @include font-size(medium);
+            color: $gray-light;
         }
         .pending {
             @include font-type(normal);
@@ -30,6 +39,10 @@
     }
     .row-role {
         padding-right: 1rem;
+        select {
+            background: $border-color;
+            width: 80%;
+        }
     }
     .row-status {
         align-items: center;
@@ -41,15 +54,27 @@
         padding: .4rem .5rem;
     }
     .active {
-        background-color: $whitish;
+        color: $gray-light;
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: $success;
+            margin-right: 10px;
+        }
     }
     .resend {
-        background-color: $primary;
-        color: $white;
-        &:hover {
-            background-color: $primary-light;
-            color: $white;
-            transition: background-color .3s linear;
+        color: $gray-light;
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: $red;
+            margin-right: 10px;
         }
     }
     .delete {
@@ -70,13 +95,19 @@
             @include font-size(small);
         }
     }
+    .header-member {
+        @include font-type(medium);
+        @include font-size(xlarge);
+        color: $primary-dark;
+    }
+
     .row-member,
     .row-role,
     .header-member,
     .header-role {
-        flex-basis: 210px;
+        flex-basis: 170px;
         flex-grow: 3;
-        min-width: 210px;
+        min-width: 170px;
     }
     .row-admin,
     .header-admin {

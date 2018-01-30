@@ -397,12 +397,12 @@ module.directive("tgMembershipsRowRoleSelector", ["$log", "$tgRepo", "$tgConfirm
 MembershipsRowActionsDirective = ($log, $repo, $rs, $confirm, $compile, $translate, $location,
                                   $navUrls, lightboxFactory, projectService) ->
     activedTemplate = """
-    <div class="active"
+    <div class="active sdas"
          translate="ADMIN.MEMBERSHIP.STATUS_ACTIVE">
     </div>
     <a class="delete" href=""
        title="{{ 'ADMIN.MEMBERSHIP.DELETE_MEMBER' | translate }}">
-        <tg-svg svg-icon="icon-trash"></tg-svg>
+        <tg-svg svg-icon="icon-close"></tg-svg>
     </a>
     """
 
@@ -413,7 +413,7 @@ MembershipsRowActionsDirective = ($log, $repo, $rs, $confirm, $compile, $transla
     </a>
     <a class="delete" href=""
        title="{{ 'ADMIN.MEMBERSHIP.DELETE_MEMBER' | translate }}">
-        <tg-svg svg-icon="icon-trash"></tg-svg>
+        <tg-svg svg-icon="icon-close"></tg-svg>
     </a>
     """
 

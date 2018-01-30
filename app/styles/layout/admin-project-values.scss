@@ -43,21 +43,30 @@
 .project-values-title {
     align-content: center;
     align-items: center;
-    background: $mass-white;
     display: flex;
     justify-content: space-between;
-    padding: .8em 1rem;
-    text-transform: uppercase;
+    background: none;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 2.5rem;
     h2 {
-        @include font-type(light);
-        @include font-size(large);
-        margin: 0;
+        display: block;
+        width: 75%;
+        padding: .65rem 2rem;
+        background: $mass-white;
+        color: $gray-light;
+        @include font-type(text);
+        @include font-size(medium);
+        margin-bottom: 0;
         span {
             margin-left: .5rem;
             text-transform: none;
         }
     }
-    a {
+
+    .button-theme {
         display: inline-block;
+        width: 24%;
     }
 }

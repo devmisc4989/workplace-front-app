@@ -79,7 +79,7 @@ lightbox.confirm.cancel = async function() {
     let lb = $('.lightbox-generic-ask');
     await lightbox.open(lb);
 
-    lb.$('.button-red').click();
+    lb.$('.button-default').click();
 
     await lightbox.close(lb);
 };
