@@ -23,20 +23,15 @@
         border-radius: 50%;
     }
     .profile-edition {
-        @include font-size(large);
-        @include font-type(light);
-        background: rgba($black, .4);
+        display: inline-block;
+        background: $gray-light;
         bottom: 0;
         color: $white;
-        left: 0;
-        opacity: 0;
-        overflow: hidden;
-        padding: 1rem;
-        position: absolute;
-        transform: translateY(100%);
-        width: 100%;
+        padding: 0.5rem 1.5rem;
+        border-radius: 3px;
+        margin-top: 2rem;
         &:hover {
-            background: rgba($black, .8);
+            background: red;
             transition: all .3s cubic-bezier(.01, .7, 1, 1);
         }
 

@@ -5,10 +5,11 @@
     @include font-size(small);
     align-items: center;
     background: $white;
-    border-bottom: 1px solid $whitish;
+    border-bottom: 2px solid $border-color;
     cursor: move;
     display: flex;
     transition: background .2s;
+    border-radius: 5px;
     &:hover {
         background: rgba($primary-light, .05);
         .icon-drag {
@@ -95,6 +96,7 @@
     .assigned {
         img {
             width: 40px;
+            border-radius: 50%;
         }
     }
     .icon-upvote {
@@ -109,7 +111,7 @@
     .epic-statuses {
         @include font-type(light);
         @include font-size(small);
-        background: rgba($blackish, .9);
+        background: rgba($dark-bgr, .9);
         border-bottom: 1px solid $grayer;
         box-shadow: 3px 3px 2px rgba($black, .1);
         color: $white;

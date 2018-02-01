@@ -11,11 +11,22 @@ body {
 // Main
 .master {
     background: $main-bgr-color;
+    min-height: calc(100vh - 60px);
 }
 
 // Secondary panel
 .menu-secondary {
-    background: $white;
+    background: $dark-bgr;
+    &.sidebar {
+        background: $white;
+        border-radius: 5px;
+        margin: 1rem 0 0;
+    }
+    &.settings-nav {
+        background: $dark-bgr;
+        margin-top: 0;
+        border-radius: 0;
+    }
 }
 
 // Tertiary panel
@@ -39,7 +50,7 @@ h6 {
 a {
     color: $grayer;
     &:hover {
-        color: $primary;
+        color: $red;
     }
 }
 

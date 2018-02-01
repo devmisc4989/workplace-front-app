@@ -1,13 +1,16 @@
 .single-project {
     .single-project-intro {
         display: flex;
-        margin-bottom: 2rem;
+        align-items: center;
+        margin: 2rem 0;
     }
     .project-logo {
         margin-right: 1rem;
         width: 6rem;
+        border-radius: 50%;
         img {
             width: 100%;
+            border-radius: 50%;
         }
     }
     .single-project-title-wrapper {
@@ -24,7 +27,7 @@
         display: flex;
     }
     h1 {
-        color: $primary;
+        color: $primary-dark;
         display: inline-block;
         line-height: 1.2;
         margin-bottom: 0;
@@ -51,15 +54,13 @@
         display: flex;
     }
     .title {
-        @include font-size(medium);
-        @include font-type(text);
+        @include font-size(larger);
         @include font-type(bold);
         align-content: center;
-        background: $mass-white;
         display: flex;
         justify-content: space-between;
         margin-bottom: .5rem;
-        padding: .5rem 1rem;
+        padding: .5rem 1rem .5rem 0;
     }
     .single-project-tags {
         margin-bottom: 1rem;
@@ -92,8 +93,11 @@
         }
     }
     .involved-data {
-        flex-basis: 220px;
-        width: 220px;
+        flex-basis: 270px;
+        width: 270px;
+        background: #fff;
+        border-radius: 5px;
+        padding: 22px;
     }
     .involved-team {
         display: flex;

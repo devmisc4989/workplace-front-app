@@ -1,5 +1,4 @@
 .detail-header-container {
-    background: $mass-white;
     flex: 1;
     padding: 1rem;
     position: relative;
@@ -95,7 +94,7 @@
         margin-left: 1rem;
         transition: fill .2s;
         &:hover {
-            fill: $primary;
+            fill: $red;
         }
     }
 }

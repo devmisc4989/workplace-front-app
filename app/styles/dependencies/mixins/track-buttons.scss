@@ -19,9 +19,9 @@
             margin-right: .25rem;
         }
         &.active {
-            color: $primary;
+            color: $red;
             .icon {
-                fill: currentcolor;
+                fill: $red;
             }
         }
     }

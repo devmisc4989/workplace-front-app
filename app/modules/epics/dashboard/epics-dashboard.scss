@@ -1,8 +1,9 @@
 .empty-epics {
     text-align: center;
     a {
-        color: $primary;
+        color: $red;
         display: block;
         margin-bottom: 2rem;
+        text-transform: uppercase;
     }
 }

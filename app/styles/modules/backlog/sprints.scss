@@ -7,6 +7,14 @@
     }
     h1 {
         margin: 0;
+        @include font-size(medium);
+        text-transform: inherit;
+        @include font-type(title);
+        span {
+            @include font-size(medium);
+            text-transform: inherit;
+            @include font-type(title);
+        }
     }
     .add-sprint {
         background: $red;
@@ -55,6 +63,7 @@
         margin-bottom: 2rem;
         header {
             position: relative;
+            margin-top: 1rem;
         }
         &:hover {
             .edit-sprint {
@@ -100,6 +109,9 @@
         ul {
             margin: 0;
             text-align: right;
+        }
+        .button-theme {
+            margin-top: 30px;
         }
     }
     .compact-sprint {

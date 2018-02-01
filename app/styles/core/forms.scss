@@ -34,12 +34,13 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url("../images/icons/arrow---down.svg")!important;
+    background-image: url("../images/icons/arrow.svg")!important;
     background-origin: content-box!important;
     background-position: right -1rem center!important;
     background-repeat: no-repeat!important;
-    background-size: 10px 5px!important;
+    background-size: 10px 15px!important;
     padding-right: 1.5rem;
+    background-color: $mass-white!important;
 }
 
 button,

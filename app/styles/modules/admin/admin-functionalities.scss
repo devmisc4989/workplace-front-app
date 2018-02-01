@@ -79,6 +79,7 @@
             display: inline-block;
             color: $primary-dark;
             @include font-type(title);
+            @include font-size(xsmall);
             margin-bottom: 8px;
         }
     }

@@ -5,7 +5,8 @@
     @include epics-table;
     align-items: center;
     background: $white;
-    border-bottom: 1px solid $whitish;
+    border-bottom: 2px solid $border-color;
+    border-radius: 5px;
     display: flex;
     margin-left: 4rem;
     transition: background .2s;
@@ -57,6 +58,7 @@
     .assigned {
         img {
             width: 40px;
+            border-radius: 50%;
         }
     }
     .icon-upvote {

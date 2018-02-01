@@ -11,6 +11,7 @@
         background: $white;
         border-radius: 5px;
         padding: 50px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
     fieldset {
@@ -18,6 +19,7 @@
     }
 
     &.lightbox-create-issue {
+        text-align: center;
         form {
             background: $white;
             padding: 50px;
@@ -29,15 +31,32 @@
                 flex-basis: 946px;
             }
         }
+
+        .button-theme {
+            display: inline-block;
+        }
     }
 
     .button-theme {
         width: auto;
         margin: 0 auto;
+        min-width: 150px;
     }
 
     .close {
         fill: $white;
+    }
+
+    .lightbox-contact-project-name {
+        color: $red;
+    }
+
+    .lightbox-contact-project-logo {
+        border-radius: 50%;
+    }
+
+    .lightbox-contact-project-button {
+        margin-top: 30px;
     }
 }
 
@@ -73,7 +92,7 @@
             }
         }
         span {
-            color: $grayer;
+            color: $white;
             vertical-align: middle;
         }
     }
@@ -97,7 +116,7 @@
             vertical-align: middle;
             &:hover {
                 background: $primary-light;
-                border: 1px solid $primary;
+                border: 1px solid $red;
             }
             svg {
                 @include svg-size(.75rem);
@@ -114,8 +133,8 @@
         .team-requirement,
         .iocaine-flag {
             input:checked+label {
-                background: $primary;
-                border: 1px solid $primary;
+                background: $red;
+                border: 1px solid $red;
                 color: $white;
 
             }
@@ -220,9 +239,10 @@
     .delete-sprint {
         @include font-size(small);
         color: $gray;
-        float: right;
         margin: 1rem .25rem 0 0;
         transition: color .3s linear;
+        display: block;
+        text-align: center;
         .icon {
             fill: currentColor;
         }
@@ -465,6 +485,10 @@
         flex-basis: 420px;
         flex-grow: 0;
         width: 420px;
+        background: $white;
+        border-radius: 5px;
+        padding: 50px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
     textarea {
         margin-bottom: 1rem;

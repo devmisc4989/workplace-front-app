@@ -1,10 +1,10 @@
 tg-lightbox-close
 
 .create-epic-container
-    h2.title(translate="EPICS.CREATE.TITLE")
     form(
         ng-submit="vm.createEpic()"
     )
+        h2.title(translate="EPICS.CREATE.TITLE")
         .subject-container
             .color-selector
                 fieldset
