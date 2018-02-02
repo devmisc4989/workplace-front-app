@@ -20,7 +20,12 @@ class RoomListController
         for i in [0...users.size]
             room_name += users.get(i).get('full_name') + ', '
         return room_name.substr(0, room_name.length - 2)
-        
+    
+    getRoomMember: (room) ->
+        currentUserId = @currentUserService.getUser().get('id');
+        users = room.get('users').filter (user) -> (user.get('id') != currentUserId)
+        return users.get(0)
+
     getRoomProjectName: (room) ->
         return room.get('project_extra_info').get('name')
 
