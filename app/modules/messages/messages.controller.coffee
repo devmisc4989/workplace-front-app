@@ -107,7 +107,7 @@ class MessagesController
     getRoomProjectName: (room) ->
         return room.get('project_extra_info').get('name')
 
-    sendMessage: (event) ->
+    sendMessageByEnter: (event) ->
         currentUserId = @currentUserService.getUser().get('id');
         if(event.which == 13)
             if(@.message_text)
@@ -124,5 +124,19 @@ class MessagesController
             event.preventDefault()
             return false
         return true
+
+    sendMessage: () ->
+        currentUserId = @currentUserService.getUser().get('id');
+        if(@.message_text)
+            @messagesService.sendMessage({
+                room_slug: @.slug,
+                message: @.message_text
+            })
+            @.messages.push({
+                content: @.message_text,
+                sent_time: Math.floor(Date.now()),
+                sender: @currentUserService.getUser().toJS()
+            })
+        @.message_text = ''
 
 angular.module("taigaMessages").controller("MessagesCtrl", MessagesController)

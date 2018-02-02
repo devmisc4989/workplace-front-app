@@ -1,6 +1,5 @@
 .wrapper(ng-init="vm.loadInitialData()")
-    tg-project-menu
-    sidebar.menu-secondary
+    sidebar.menu-secondary.room-list
         section.room-filters
             div.room-filters-inner
                 header
@@ -19,18 +18,32 @@
         
     section.main.messages(role="main")
         header.header-with-message
-            h1 {{vm.roomTitle}}
-            h4 {{vm.roomProject}}
+            .chat-header-left
+                h2 {{vm.roomTitle}}
+                .online-status
+                    .light
+                        span Online Now
+                .clearfix
+                small {{vm.roomProject}}
+            .chat-header-right
 
         main.container(ng-if="vm.slug")
             div.message-container(tg-scroll-bottom="vm.messages")
-                .row.message(ng-repeat="message in vm.messages")
-                    .sender(ng-if="vm.messages[$index - 1].sender.id != message.sender.id")
-                        img(tg-avatar="message.sender", tg-bo-alt="message.sender.full_name")
-                        .sender-data
-                            label.sender-name {{message.sender.full_name}}
-                            label.sent-time {{message.sent_time | momentTimeStampFormat:'YYYY/MM/DD HH:mm'}}
-                    label.content {{message.content}}
+                .chat-box(ng-repeat="message in vm.messages")
+                    .user-detail(ng-if="vm.messages[$index - 1].sender.id != message.sender.id")
+                        .user-avatar
+                            .image-cover
+                                img(tg-avatar="message.sender", tg-bo-alt="message.sender.full_name")
+                            .sent-time {{message.sent_time | momentTimeStampFormat:'HH:mm'}}
+                        h2 {{message.sender.full_name}}
+                    .chat-content
+                        p {{message.content}}
                 .bottom(id="message_bottom")
-            div.text-containter
-                textarea(ng-model="vm.message_text" ng-keypress="vm.sendMessage($event)")
+            div.typing-section
+                input.input-chat(type="text" placeholder="Type your message..." ng-model="vm.message_text" ng-keypress="vm.sendMessageByEnter($event)")
+                .right-attach
+                    a.smile()
+                        tg-svg(svg-icon="icon-smile")
+                    a.attach()
+                        tg-svg(svg-icon="icon-attach")
+                button.mainbtn.chat-send(ng-click="vm.sendMessage()") Send
