@@ -1,7 +1,7 @@
 .search-in {
     input[type="text"] {
         border: 2px solid $grayer;
-        padding: 10px;
+        padding: 10px 35px 10px 10px;
         color: $white;
         @include placeholder {
             color: $grayer;

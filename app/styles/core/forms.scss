@@ -27,6 +27,11 @@ textarea {
       color: $mass-white!important;
       opacity: 1!important;
     }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
 }
 
 select {

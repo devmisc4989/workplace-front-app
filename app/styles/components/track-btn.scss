@@ -16,18 +16,16 @@
         }
     }
     &.is-hover {
+        background: lighten($red, 10%);
+        transition: background .2s;
         .track-inner {
-            background: lighten($red, 10%);
-            color: $whitish;
-            transition: background .2s;
+            color: $red;
         }
         .icon {
-            fill: $red-light;
+            fill: $red;
         }
         .track-button-counter {
-            background: $red;
-            color: $whitish;
-            transition: background .2s;
+            color: $red;
         }
     }
     .watch-options-arrow {
@@ -108,14 +106,14 @@
         justify-content: space-between;
         padding: .5rem 0;
         &.active {
-            color: $primary-light;
+            color: $red;
         }
     }
     .watch-check {
         height: 1.25rem;
         width: 1.25rem;
         svg {
-            fill: $primary-light;
+            fill: $red;
         }
     }
 }
