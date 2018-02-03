@@ -5,13 +5,19 @@
     max-width: 1000px;
     padding-left: 60px;
     padding-top: 30px;
+    fieldset {
+        &.submit {
+            display: block;
+        }
+    }
     .submit-button {
         width: auto;
         min-width: 175px;
+        display: inline-block;
     }
     .delete-account {
         @include font-size(small);
-        display: block;
+        display: inline-block;
         margin-left: 1rem;
         &:hover {
             color: $red;

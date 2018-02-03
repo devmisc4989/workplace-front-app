@@ -15,19 +15,21 @@
                             )
             div.room-filter-outer
                 tg-room-list(room="vm.slug")
-        
+
     section.main.messages(role="main")
         header.header-with-message
             .chat-header-left
-                h2 {{vm.roomTitle}}
-                .online-status
-                    .light
-                        span Online Now
+                div.chat-header-left-title
+                    h2 {{vm.roomTitle}}
+                    .online-status
+                        .light
+                            span.status-circle
+                            span Online Now
                 .clearfix
                 small {{vm.roomProject}}
             .chat-header-right
 
-        main.container(ng-if="vm.slug")
+        main.container.message-main-container(ng-if="vm.slug")
             div.message-container(tg-scroll-bottom="vm.messages")
                 .chat-box(ng-repeat="message in vm.messages")
                     .user-detail(ng-if="vm.messages[$index - 1].sender.id != message.sender.id")
@@ -35,8 +37,9 @@
                             .image-cover
                                 img(tg-avatar="message.sender", tg-bo-alt="message.sender.full_name")
                             .sent-time {{message.sent_time | momentTimeStampFormat:'HH:mm'}}
-                        h2 {{message.sender.full_name}}
+
                     .chat-content
+                        h2 {{message.sender.full_name}}
                         p {{message.content}}
                 .bottom(id="message_bottom")
             div.typing-section
@@ -46,4 +49,4 @@
                         tg-svg(svg-icon="icon-smile")
                     a.attach()
                         tg-svg(svg-icon="icon-attach")
-                button.mainbtn.chat-send(ng-click="vm.sendMessage()") Send
+                button.button-theme.mainbtn.chat-send(ng-click="vm.sendMessage()") Send
