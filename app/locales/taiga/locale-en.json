@@ -403,7 +403,7 @@
         "PAGE_TITLE": "Messages - {{projectName}}",
         "PAGE_DESCRIPTION": "Project Chatting Box",
         "ROOM": {
-            "TITLE": "Inbox",
+            "TITLE": "Message Rooms",
             "PLACEHOLDER_INPUT_SEARCH": "Search by room name"
         }
     },

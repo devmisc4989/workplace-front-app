@@ -35,5 +35,10 @@ class RoomsService
     getMessageRoomByName: (roomname) ->
         return @resources.rooms.getRoomByName(roomname)
 
+    getUnreadRooms: (room_id) ->
+        return @resources.rooms.getUnreadRooms(@currentUserService.getUser().get('id'), room_id)
+
+    setUnreadRooms: (data) ->
+        return @resources.rooms.setUnreadRooms(data)
 
 angular.module('taigaMessages').service('tgRoomsService', RoomsService)

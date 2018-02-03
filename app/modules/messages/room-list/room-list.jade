@@ -1,3 +1,4 @@
+span()
 nav
     ul.client-list
         li.client-box(
@@ -5,7 +6,7 @@ nav
             ng-class="{active: (room.get('slug') == vm.room)}"
         )
             .client-box-in
-                a(                    
+                a(
                     ng-click="vm.changeRoom(room)"
                     href="/messages/{{room.get('slug')}}"
                 )
@@ -15,5 +16,4 @@ nav
                         h2.title(tg-bo-bind="vm.getRoomName(room)")
                         .clearfix
                         p(tg-bo-bind="vm.getRoomProjectName(room)")
-                    .light-icon
-
+                    .light-icon(id="new-message-{{room.get('id')}}" ng-class="{'icon-hidden':(vm.unreadrooms[room.get('id')] == undefined)}") {{vm.unreadrooms[room.get('id')]}}
