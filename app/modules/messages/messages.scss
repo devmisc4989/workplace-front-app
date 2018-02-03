@@ -4,6 +4,10 @@
         transition: color .3s linear;
         margin: 0;
     }
+
+    .online-status{
+        display: none;
+    }
 }
 
 .chat-header-left {
@@ -30,6 +34,7 @@
     border-radius: 5px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
+
 .messages {
     .container {
         height: calc(100vh - 165px);
@@ -59,9 +64,22 @@
             color: $gray-light;
         }
         .chat-box {
-            display: flex;
-            border-bottom: 2px solid $border-color;
-            padding: 20px 0;
+            border-top: 2px solid $border-color;
+            padding: 10px 0 0 0;
+            margin-top: 10px;            
+
+            &.duplicate-message{
+                border: none;
+                padding: 0;
+                margin-top: 0px;
+            }
+
+            .user-detail{
+                display: flex;
+                h2{
+                    margin: 10px 20px;
+                }
+            }
         }
         .image-cover {
             display: inline-block;
@@ -73,13 +91,13 @@
         }
 
         .chat-content {
-            padding-left: 15px;
+            padding-left: 60px;
             h2 {
                 margin-bottom: 0;
             }
             p {
                 color: $gray-light;
-                margin-bottom: 8px;
+                margin-bottom: 3px;
             }
         }
     }
@@ -177,9 +195,33 @@
         }
     }
     .client-box {
+        padding: 0 10px;
+        &.active{
+            .client-text{
+                .title{
+                    color: #fff;
+                }
+            }
+        }
+
         a {
             display: flex!important;
             justify-content: flex-start;
+        }
+
+        .light-icon{
+            background: #f73756;
+            color: #fff;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            margin-left: 15px;
+            font-size: 16px;
+            line-height: 25px;
+            &.icon-hidden{
+                display: none;
+            }
         }
     }
 }
@@ -187,8 +229,9 @@
 
 .client-text {
     padding-left: 10px;
+
     .title {
-        color: $white;
+        color: #878890;
         @include font-size(medium);
         @include font-type(title);
         margin-bottom: 5px;

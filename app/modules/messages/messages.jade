@@ -14,7 +14,7 @@
                                 title="{{'COMMON.FILTERS.TITLE_ACTION_FILTER_BUTTON' | translate}}"
                             )
             div.room-filter-outer
-                tg-room-list(room="vm.slug")
+                tg-room-list(room="vm.slug", unreadrooms="vm.unread_rooms") 
 
     section.main.messages(role="main")
         header.header-with-message
@@ -31,15 +31,14 @@
 
         main.container.message-main-container(ng-if="vm.slug")
             div.message-container(tg-scroll-bottom="vm.messages")
-                .chat-box(ng-repeat="message in vm.messages")
+                .chat-box(ng-repeat="message in vm.messages" ng-class="{'duplicate-message': !(vm.messages[$index - 1].sender.id != message.sender.id)}")
                     .user-detail(ng-if="vm.messages[$index - 1].sender.id != message.sender.id")
                         .user-avatar
                             .image-cover
                                 img(tg-avatar="message.sender", tg-bo-alt="message.sender.full_name")
                             .sent-time {{message.sent_time | momentTimeStampFormat:'HH:mm'}}
-
-                    .chat-content
                         h2 {{message.sender.full_name}}
+                    .chat-content
                         p {{message.content}}
                 .bottom(id="message_bottom")
             div.typing-section
@@ -47,6 +46,15 @@
                 .right-attach
                     a.smile()
                         tg-svg(svg-icon="icon-smile")
+                    //- .add-attach
+                    //-     label.add-attachment-button(for="add-attach")
+                    //-         tg-svg(svg-icon="icon-attach")
+                    //-     input(
+                    //-         id="add-attach",
+                    //-         type="file",
+                    //-         ng-model="files",
+                    //-         tg-file-change="vm.addAttachments(files, true)"
+                    //-     )                            
                     a.attach()
                         tg-svg(svg-icon="icon-attach")
                 button.button-theme.mainbtn.chat-send(ng-click="vm.sendMessage()") Send
