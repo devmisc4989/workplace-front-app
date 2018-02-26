@@ -11,7 +11,6 @@ ScrollBottomDirective = ($rootScope) ->
         container = angular.element(element)
         container.bind 'scroll', ->
             if (container.scrollTop() <= 0)
-                console.log("container.scrollTop", container.scrollTop())
                 $rootScope.$broadcast('fetchMessages', '')
         return        
 

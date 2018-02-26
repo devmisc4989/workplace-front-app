@@ -92,6 +92,9 @@
 
         .chat-content {
             padding-left: 60px;
+            &.unread-message{
+                border-top: 1px dashed #f73756;
+            }
             h2 {
                 margin-bottom: 0;
             }
