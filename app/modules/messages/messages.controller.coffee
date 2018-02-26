@@ -31,6 +31,7 @@ class MessagesController
         @.roomProject = ''
         @.message_text = ''
         @.unread_rooms = {}
+        @.current_unread_count = 0
 
         @socket.on 'message', (data) =>
             data.receivers.forEach (receiver) =>
@@ -85,12 +86,15 @@ class MessagesController
         }
 
     getUnreadRooms: () ->
+        currentRoomSlug = @.slug
         @resources.rooms.getUnreadRooms(@currentUserService.getUser().get('id'), @.slug)
             .then (result) =>
                 rooms = result.toJS().reverse()
                 for i in [0...rooms.length]
-                    @.unread_rooms[rooms[i].room_id] = rooms[i].unread_count
-
+                    if(rooms[i].room_slug != currentRoomSlug)
+                        @.unread_rooms[rooms[i].room_id] = rooms[i].unread_count
+                    else
+                        @.current_unread_count = rooms[i].unread_count
     loadInitialData: () ->
         @.getUnreadRooms()
         @roomsService.clear()

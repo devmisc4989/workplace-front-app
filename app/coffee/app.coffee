@@ -244,6 +244,7 @@ configure = ($routeProvider, $locationProvider, $httpProvider, $provide, $tgEven
         {
             templateUrl: "messages/messages.html",
             loader: true,
+            title: "MESSAGES.SECTION_NAME",
             controller: "MessagesCtrl",
             controllerAs: "vm"
         }
@@ -253,6 +254,7 @@ configure = ($routeProvider, $locationProvider, $httpProvider, $provide, $tgEven
         {
             templateUrl: "messages/messages.html",
             loader: true,
+            title: "MESSAGES.SECTION_NAME",
             controller: "MessagesCtrl",
             controllerAs: "vm"
         }

@@ -38,7 +38,7 @@
                                 img(tg-avatar="message.sender", tg-bo-alt="message.sender.full_name")
                             .sent-time {{message.sent_time | momentTimeStampFormat:'HH:mm'}}
                         h2 {{message.sender.full_name}}
-                    .chat-content
+                    .chat-content(ng-class="{'unread-message': ($index == vm.messages.length - vm.current_unread_count)}")
                         p {{message.content}}
                 .bottom(id="message_bottom")
             div.typing-section
