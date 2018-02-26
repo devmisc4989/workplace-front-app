@@ -78,7 +78,7 @@ describe('attributes - status', function() {
 
         utils.common.takeScreenshot('attributes', 'delete-status');
 
-        el.$('.button-green').click();
+        el.$('.button-theme').click();
 
         await browser.waitForAngular();
 

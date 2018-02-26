@@ -1,32 +1,31 @@
 .profile-content-tabs {
-    border-top: 1px solid $whitish;
     z-index: 9;
     .tab {
-        color: $gray-light;
+        color: $tabs-color;
         display: inline-block;
         padding: 1rem;
+        @include font-type(title);
         &:hover,
         &.active {
             color: $gray;
             transition: color .2s linear;
             .icon {
-                fill: $primary-light;
+                fill: $red;
             }
         }
         &.active {
             background: $white;
-            border-left: 1px solid $whitish;
-            border-right: 1px solid $whitish;
             position: relative;
             top: 1px;
             transition: color .2s linear;
+            border-radius: 5px 5px 0 0;
             .icon {
                 color: $primary;
             }
         }
     }
     .icon {
-        fill: $gray-light;
+        fill: $sidebar-text-color;
         height: .8rem;
         margin-right: .5rem;
         transition: fill .2s linear;

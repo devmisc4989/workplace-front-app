@@ -3,13 +3,18 @@
     @include profile-form;
     .looking-for-people,
     .get-feedback {
-        @include font-type(light);
-        border-bottom: 1px solid $whitish;
+        border-bottom: 2px solid $border-color;
         padding: 1rem 0;
+        color: $gray-light;
     }
     .looking-for-people {
-        border-top: 1px solid $whitish;
+        border-top: 2px solid $border-color;
+        border-bottom: none;
         margin-bottom: 0;
+        color: $gray-light;
+    }
+    .get-feedback {
+        border-top: none;
     }
     .looking-for-people-selector,
     .get-feedback-inner {
@@ -34,20 +39,37 @@
             animation: dropdownFade .2s reverse;
             animation-delay: .1s;
         }
+        label {
+            @include font-type(medium);
+        }
     }
     .delete-project {
-        @include font-size(x-small);
+        @include font-size(xsmall);
         display: block;
         margin-top: 1rem;
         text-align: right;
+        color: $gray-light;
         &:hover {
             color: $red;
         }
     }
+
+    .submit-inline {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        .submit-button {
+            min-width: 175px;
+        }
+        .delete-project {
+            margin: 0 0 0 1rem;
+        }
+    }
     .private-or-public {
-        @include font-size(x-small);
+        @include font-size(medium);
         color: $gray-light;
         margin-bottom: 2rem;
+        line-height: 17px;
         svg {
             @include svg-size(1.1rem);
             fill: $gray-light;
@@ -59,7 +81,10 @@
 .project-privacy-settings {
     display: flex;
     margin-bottom: .5rem;
+    color: $gray-light;
     .privacy-option {
+        display: flex;
+        align-items: center;
         flex: 1;
         transition: .2 linear;
         &:first-child {
@@ -73,12 +98,20 @@
         display: none;
     }
     label {
-        background: $mass-white;
+        border-radius: 50%;
+        width: 17px;
+        height: 17px;
+        display: block;
+        padding: 0;
+        margin: 0 8px 0 0;
+        background: $white;
         color: $grayer;
+        border: 2px solid $gray-light;
         text-align: center;
         transition: all .2s linear;
+        position: relative;
         &:hover {
-            background: rgba($primary-light, .4);
+            border: 2px solid $red;
             color: $grayer;
             svg {
                 fill: $grayer;
@@ -93,8 +126,20 @@
     }
     .privacy-project:checked {
         + label {
-            background: $primary-light;
+            background: $white;
+            border: 2px solid $red;
             color: $white;
+            &:after {
+                content: "";
+                background: $red;
+                width: 8px;
+                height: 8px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                border-radius: 50%;
+            }
             svg {
                 @include svg-size(1.1rem);
                 fill: $white;
@@ -144,6 +189,19 @@ tg-admin-project-restrictions {
         }
     }
 }
+
+.owner-wrapper {
+    .title {
+        color: $gray-light;
+        margin-bottom: 0.625rem;
+    }
+}
+
+.owner-info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .admin-project-profile-owner-actions {
     align-items: center;
     border-top: 1px solid $whitish;
@@ -151,7 +209,7 @@ tg-admin-project-restrictions {
     justify-content: space-between;
     padding-top: 1rem;
     a {
-        color: $primary;
+        color: $red;
         &:hover {
             color: $primary-light;
             transition: color .2s;
@@ -161,17 +219,18 @@ tg-admin-project-restrictions {
         width: 100%;
     }
     .owner-info {
+        @include font-size(large);
         flex: 1;
         padding-left: .5rem;
+        color: $red;
     }
     .owner-info-title {
         color: $gray-light;
     }
-    .owner-name {
-        @include font-type(bold);
-    }
     .owner-avatar {
-        width: 2.5rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
     }
     .request {
         flex-shrink: 0;

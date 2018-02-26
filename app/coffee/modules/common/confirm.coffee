@@ -64,7 +64,7 @@ class ConfirmService extends taiga.Service
         el.find(".message").text(message) if message
 
         # Assign event handlers
-        el.on "click.confirm-dialog", ".button-green", debounce 2000, (event) =>
+        el.on "click.confirm-dialog", ".button-theme", debounce 2000, (event) =>
             event.preventDefault()
             target = angular.element(event.currentTarget)
             currentLoading = @loading()
@@ -77,7 +77,7 @@ class ConfirmService extends taiga.Service
                         @.hide(el)
             }
 
-        el.on "click.confirm-dialog", ".button-red", (event) =>
+        el.on "click.confirm-dialog", ".button-default", (event) =>
             event.preventDefault()
             defered.reject()
             @.hide(el)
@@ -115,7 +115,7 @@ class ConfirmService extends taiga.Service
             choicesField.append(angular.element("<option value='#{key}'>#{value}</option>"))
 
         # Assign event handlers
-        el.on "click.confirm-dialog", "a.button-green", debounce 2000, (event) =>
+        el.on "click.confirm-dialog", "a.button-theme", debounce 2000, (event) =>
             event.preventDefault()
             target = angular.element(event.currentTarget)
             currentLoading = @loading()
@@ -129,7 +129,7 @@ class ConfirmService extends taiga.Service
                         @.hide(el)
             }
 
-        el.on "click.confirm-dialog", ".button-red", (event) =>
+        el.on "click.confirm-dialog", ".button-default", (event) =>
             event.preventDefault()
             defered.reject()
             @.hide(el)
@@ -147,7 +147,7 @@ class ConfirmService extends taiga.Service
         el.find(".title").html(message)
 
         # Assign event handlers
-        el.on "click.confirm-dialog", ".button-green", (event) =>
+        el.on "click.confirm-dialog", ".button-theme", (event) =>
             event.preventDefault()
             defered.resolve()
             @.hide(el)
@@ -193,7 +193,7 @@ class ConfirmService extends taiga.Service
         el.find(".message").html(message) if message
 
         # Assign event handlers
-        el.on "click.confirm-dialog", ".button-green", (event) =>
+        el.on "click.confirm-dialog", ".button-theme", (event) =>
             event.preventDefault()
             defered.resolve()
             @.hide(el)

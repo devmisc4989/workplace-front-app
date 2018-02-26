@@ -7,12 +7,14 @@
         flex-shrink: 0;
         margin-right: 1.5rem;
         width: 60px;
+        border-radius: 50%;
     }
     .activity-data {
         margin-bottom: 1rem;
     }
     .activity-creator {
-        color: $primary;
+        @include font-type(title);
+        color: $primary-dark;
         margin-right: .5rem;
     }
     .activity-date {

@@ -11,6 +11,8 @@ $tag-input-width: 250px;
         border-color: $gray-light;
         padding: 6px;
         width: 14rem;
+        height: 36px!important;
+        margin-right: 0.25rem;
     }
     .save {
         cursor: pointer;
@@ -19,14 +21,14 @@ $tag-input-width: 250px;
         margin: .5rem 0 0 .5rem;
         transition: .2s linear;
         &:hover {
-            fill: $primary;
+            fill: $red;
         }
     }
     .tags-dropdown {
         @include font-size(small);
         background: $white;
-        border: 1px solid $gray-light;
-        border-top: 0;
+        border: 1px solid $border-color;
+        border-top: 0!important;
         box-shadow: 2px 2px 3px rgba($black, .2);
         left: 0;
         max-height: 20vh;

@@ -6,7 +6,8 @@ RoomListDirective = () ->
         controllerAs: "vm",
         bindToController: true,
         scope: {
-            room: '='
+            room: '=',
+            unreadrooms: '='
         }
     }
 

@@ -1,11 +1,14 @@
 .check {
-    background-color: darken($whitish, 10%);
+    background-color: transparent;
     border-radius: 2px;
+    border: 2px solid $border-color;
+    padding: 2px;
+    border-radius: 15px;
     cursor: pointer;
-    height: 1.5rem;
     overflow: hidden;
     position: relative;
-    width: 65px;
+    width: 53px;
+    height: 29px;
     input {
         cursor: pointer;
         height: 50px;
@@ -16,17 +19,19 @@
         width: 100px;
         z-index: 999;
         + div {
-            background-color: $gray;
-            height: 25px;
+            background-color: $gray-light;
+            width: 21px;
+            height: 21px;
             transition: all .2s linear;
-            width: 50%;
+            border-radius: 50%;
         }
         ~ .check-text {
-            @include font-size(small);
+            @include font-size(xsmall);
             @include font-type(text);
             color: $white;
             position: absolute;
-            top: .2rem;
+            top: 2px;
+            text-indent: -999999px;
         }
         ~ .check-yes {
             opacity: 0;
@@ -46,10 +51,12 @@
         ~ .check-yes {
             opacity: .8;
             right: .25rem;
+            color: $red;
         }
         ~ .check-no {
             left: .25rem;
             opacity: 0;
+            color: $gray-light;
         }
     }
     input:disabled {

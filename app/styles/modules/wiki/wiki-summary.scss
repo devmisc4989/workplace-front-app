@@ -1,3 +1,9 @@
+.wiki-container-wrapper {
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+}
 .wiki-summary {
     align-items: center;
     justify-content: flex-start;

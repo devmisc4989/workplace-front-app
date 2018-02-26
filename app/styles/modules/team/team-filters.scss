@@ -17,7 +17,6 @@
         .icon {
             fill: $blackish;
             opacity: 0;
-            transition: opacity .3s linear;
         }
     }
     a {
@@ -30,15 +29,13 @@
         &:hover,
         &.active {
             color: $white;
-            transition: color .3s linear;
             .icon {
-                fill: currentColor;
+                fill: $white;
                 opacity: 1;
             }
         }
     }
     .active {
         opacity: 1;
-        transition: opacity .3s linear;
     }
 }

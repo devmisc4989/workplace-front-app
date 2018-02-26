@@ -1,13 +1,18 @@
 .colors-table {
+
+    .table-main {
+        margin-top: 1rem;
+    }
     .table-header {
         @include font-size(medium);
-        @include font-type(bold);
-        border-bottom: 3px solid $whitish;
+        @include font-type(title);
         &:hover {
             background: transparent;
         }
         .row {
             padding-left: 50px;
+            background: $mass-white;
+            border-radius: 18px;
             &:hover {
                 background: transparent;
             }
@@ -17,7 +22,7 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
         &:last-child {
             border: 0;
         }
@@ -130,7 +135,7 @@
 
     .current-color {
         background-color: $whitish;
-        border-radius: 2px;
+        border-radius: 50%;
         height: 40px;
         width: 40px;
     }
@@ -146,7 +151,7 @@
         }
         &.icon-check {
             cursor: default;
-            fill: $primary;
+            fill: $red;
             opacity: 1;
         }
         &.icon-merge {
@@ -155,7 +160,7 @@
         }
         &.icon-search {
             cursor: none;
-            fill: $primary;
+            fill: $red;
             opacity: 1;
         }
         &.icon-drag {

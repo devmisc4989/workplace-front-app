@@ -220,7 +220,7 @@ BlockLightboxDirective = ($rootscope, $tgrepo, $confirm, lightboxService, $loadi
 
         block = () ->
             currentLoading = $loading()
-                .target($el.find(".button-green"))
+                .target($el.find(".button-theme"))
                 .start()
 
             transform = $modelTransform.save (item) ->
@@ -250,7 +250,7 @@ BlockLightboxDirective = ($rootscope, $tgrepo, $confirm, lightboxService, $loadi
         $scope.$on "$destroy", ->
             $el.off()
 
-        $el.on "click", ".button-green", (event) ->
+        $el.on "click", ".button-theme", (event) ->
             event.preventDefault()
 
             block()
@@ -374,7 +374,7 @@ CreateEditUserstoryDirective = ($repo, $model, $rs, $rootScope, lightboxService,
             })
 
             # Update texts for creation
-            $el.find(".button-green").html($translate.instant("COMMON.CREATE"))
+            $el.find(".button-theme").html($translate.instant("COMMON.CREATE"))
             $el.find(".title").html($translate.instant("LIGHTBOX.CREATE_EDIT_US.NEW_US"))
             $el.find(".tag-input").val("")
 
@@ -398,7 +398,7 @@ CreateEditUserstoryDirective = ($repo, $model, $rs, $rootScope, lightboxService,
             resetAttachments()
 
             # Update texts for edition
-            $el.find(".button-green").html($translate.instant("COMMON.SAVE"))
+            $el.find(".button-theme").html($translate.instant("COMMON.SAVE"))
             $el.find(".title").html($translate.instant("LIGHTBOX.CREATE_EDIT_US.EDIT_US"))
             $el.find(".tag-input").val("")
 

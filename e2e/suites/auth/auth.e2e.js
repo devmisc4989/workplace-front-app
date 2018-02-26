@@ -194,7 +194,7 @@ describe('auth', function() {
 
                 utils.common.takeScreenshot('auth', 'remember-password-success');
 
-                $('.lightbox-generic-success .button-green').click();
+                $('.lightbox-generic-success .button-theme').click();
 
                 await utils.lightbox.close('.lightbox-generic-success');
             });
@@ -213,7 +213,7 @@ describe('auth', function() {
 
                 utils.common.takeScreenshot("auth", "delete-account");
 
-                $('.lightbox-delete-account .button-red').click();
+                $('.lightbox-delete-account .button-default').click();
 
                 let url = await browser.getCurrentUrl();
 

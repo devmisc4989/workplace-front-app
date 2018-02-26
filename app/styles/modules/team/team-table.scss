@@ -1,6 +1,7 @@
 .table-team {
     .row {
-        padding: .5rem;
+        padding: 0.75rem 0;
+        border-bottom: 2px solid $border-color;
     }
     .username {
         flex-basis: 220px;
@@ -14,10 +15,11 @@
         justify-content: flex-end;
     }
     .attribute {
-        @include font-type(light);
         flex: 1;
         position: relative;
         text-align: center;
+        color: $gray-light;
+        @include font-type(medium);
         .icon {
             @include svg-size(1.75rem);
             fill: $gray;
@@ -38,11 +40,11 @@
         }
     }
     .leave-project {
-        @include font-size(small);
-        color: $red-light;
+        @include font-size(xsmall);
+        color: $red;
         .icon {
-            @include svg-size(.8rem);
-            fill: currentColor;
+            @include svg-size(.5rem);
+            fill: $red;
             margin-right: .2rem;
         }
         &:hover {
@@ -54,27 +56,30 @@
         }
     }
     .team-header {
-        @include font-type(text);
-        @include font-type(bold);
-        border-bottom: 0;
+        padding: 1rem 0.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid $border-color;
+        .username {
+            color: $primary-dark;
+            @include font-size(xlarge);
+        }
     }
     .hero {
         width: 100%;
         .row {
-            border-bottom: 1px solid $whitish;
-            border-top: 1px solid $whitish;
-            margin: 1rem 0;
-            padding: 1.5rem 1rem;
+            border-bottom: 2px solid $border-color;
         }
     }
     .avatar {
         align-items: center;
         display: flex;
         img {
-            flex-basis: 66px;
+            flex-basis: 70px;
             flex-grow: 0;
             flex-shrink: 0;
-            width: 66px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
         }
         .avatar-data {
             margin-left: 1rem;

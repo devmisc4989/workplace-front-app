@@ -1,8 +1,62 @@
 .lightbox {
     @include lightbox;
+    background: rgba(0, 0, 0, 0.5);
     h2 {
-        @include font-size(xlarge);
-        @include font-type(light);
+        @include font-size(larger);
+        @include font-type(bold);
+        margin-bottom: 2.5rem;
+    }
+
+    form {
+        background: $white;
+        border-radius: 5px;
+        padding: 50px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    fieldset {
+        margin-bottom: 1.125rem;
+    }
+
+    &.lightbox-create-issue {
+        text-align: center;
+        form {
+            background: $white;
+            padding: 50px;
+            text-align: center;
+            @include breakpoint(desktop) {
+                padding: 60px 164px;
+                width: 946px;
+                max-width: 946px;
+                flex-basis: 946px;
+            }
+        }
+
+        .button-theme {
+            display: inline-block;
+        }
+    }
+
+    .button-theme {
+        width: auto;
+        margin: 0 auto;
+        min-width: 150px;
+    }
+
+    .close {
+        fill: $white;
+    }
+
+    .lightbox-contact-project-name {
+        color: $red;
+    }
+
+    .lightbox-contact-project-logo {
+        border-radius: 50%;
+    }
+
+    .lightbox-contact-project-button {
+        margin-top: 30px;
     }
 }
 
@@ -11,6 +65,8 @@
         flex-basis: 600px;
         flex-grow: 0;
         max-width: 600px;
+        background: $white;
+        padding: 50px;
     }
 
     fieldset {
@@ -36,7 +92,7 @@
             }
         }
         span {
-            color: $grayer;
+            color: $white;
             vertical-align: middle;
         }
     }
@@ -60,7 +116,7 @@
             vertical-align: middle;
             &:hover {
                 background: $primary-light;
-                border: 1px solid $primary;
+                border: 1px solid $red;
             }
             svg {
                 @include svg-size(.75rem);
@@ -77,8 +133,8 @@
         .team-requirement,
         .iocaine-flag {
             input:checked+label {
-                background: $primary;
-                border: 1px solid $primary;
+                background: $red;
+                border: 1px solid $red;
                 color: $white;
 
             }
@@ -107,6 +163,8 @@
         overflow-y: auto;
     }
     .attachment-delete {
+        position: relative;
+        top: 0.125rem;
         right: .5rem;
         svg {
             fill: $gray-light;
@@ -126,6 +184,9 @@
         flex-basis: 600px;
         flex-grow: 0;
         max-width: 600px;
+        background: $white;
+        padding: 50px;
+        text-align: center;
     }
     textarea {
         max-height: 12rem;
@@ -178,9 +239,10 @@
     .delete-sprint {
         @include font-size(small);
         color: $gray;
-        float: right;
         margin: 1rem .25rem 0 0;
         transition: color .3s linear;
+        display: block;
+        text-align: center;
         .icon {
             fill: currentColor;
         }
@@ -199,6 +261,8 @@
         flex-basis: 420px;
         flex-flow: 0;
         max-width: 420px;
+        background: $white;
+        padding: 50px;
     }
     .subtitle,
     .message {
@@ -207,12 +271,13 @@
         text-align: center;
     }
     .subtitle {
-        @include font-size(large);
+        @include font-size(bg-medium);
         @include font-type(text);
         white-space: pre-line;
     }
     .options {
         display: flex;
+        padding-top: 1.25rem;
         a {
             padding: 8px 0;
             text-align: center;
@@ -420,6 +485,10 @@
         flex-basis: 420px;
         flex-grow: 0;
         width: 420px;
+        background: $white;
+        border-radius: 5px;
+        padding: 50px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
     textarea {
         margin-bottom: 1rem;
@@ -433,6 +502,8 @@
         flex-basis: 600px;
         flex-grow: 0;
         width: 600px;
+        background: $white;
+        padding: 50px;
     }
     .user-list-single {
         &:hover,
@@ -459,7 +530,7 @@
         text-align: center;
         .icon-close {
             cursor: pointer;
-            fill: $gray;
+            fill: $white;
             position: absolute;
             right: 0;
             top: 0;
@@ -538,5 +609,8 @@
     text-align: center;
     .content {
         width: 500px;
+        background: $white;
+        padding: 50px;
+        border-radius: 5px;
     }
 }

@@ -35,6 +35,7 @@
     input {
         margin: 0 1rem;
         width: 85%;
+        color: $white;
     }
     .button-gray {
         display: flex;
@@ -43,7 +44,7 @@
         padding: .5rem 0;
         text-align: center;
         &:hover {
-            background-color: $blackish;
+            background-color: $dark-bgr;
         }
     }
 }

@@ -1,13 +1,21 @@
+.general-category-wrapper {
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding-left: 35px;
+}
+
+.category-config-list {
+    border-top: 2px solid $border-color;
+}
+
 .category-config {
-    border-bottom: 1px solid $gray-light;
-    &:first-child {
-        border-top: 1px solid $gray-light;
-    }
     .resume {
         align-items: space-between;
         cursor: pointer;
         display: flex;
-        padding: 1rem;
+        align-items: center;
+        padding: 1rem 1rem 1rem 0;
         position: relative;
         &.open-drawer {
             .icon {
@@ -18,14 +26,16 @@
     .icon {
         transform: rotate(0);
         transition: all .4s;
+        fill: $sidebar-text-color;
     }
     .resume-title {
         width: 280px;
+        @include font-size(large);
     }
     .count {
         color: $gray-light;
         float: left;
-        padding-right: 5px;
+        padding-right: 20px;
     }
     .summary-role {
         flex: 1;
@@ -33,11 +43,12 @@
         .role-summary-single {
             background: $gray-light;
             display: inline-block;
-            height: 20px;
-            margin-right: .1rem;
-            width: 15px;
+            height: 12px;
+            margin-right: 0.25rem;
+            width: 12px;
+            border-radius: 50%;
             &.active {
-                background: $primary;
+                background: $red;
             }
             &.inactive {
                 background: $gray;
@@ -46,26 +57,38 @@
     }
     .category-items {
         @include slide(400px, hidden);
-        background-color: $whitish;
-        width: 100%;
+        border-top: 2px solid $border-color;
+        &.open {
+            border-top: 2px solid transparent;
+        }
         .items-container {
+            background-color: $gray-bgr;
+            width: 64.5%;
+            margin-left: 33%;
             padding: 1rem;
         }
     }
     .category-item {
         align-items: center;
-        border-bottom: 1px solid $whitish;
         display: flex;
         justify-content: space-between;
         padding: .5rem .5rem .5rem 2rem;
+        @include font-type(title);
         &:last-child {
             border-bottom: 0;
         }
     }
     .check {
+        border-color: #caccd1;
         input { // IE needs smaller size
             height: 40px;
             width: 85px;
+        }
+    }
+
+    &:last-child {
+        .category-items {
+            border: none;
         }
     }
 }

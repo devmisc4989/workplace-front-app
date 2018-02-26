@@ -69,7 +69,7 @@ lightbox.confirm.ok = async function() {
     let lb = $('.lightbox-generic-ask');
     await lightbox.open(lb);
 
-    lb.$('.button-green').click();
+    lb.$('.button-theme').click();
 
     await lightbox.close(lb);
 };
@@ -79,7 +79,7 @@ lightbox.confirm.cancel = async function() {
     let lb = $('.lightbox-generic-ask');
     await lightbox.open(lb);
 
-    lb.$('.button-red').click();
+    lb.$('.button-default').click();
 
     await lightbox.close(lb);
 };

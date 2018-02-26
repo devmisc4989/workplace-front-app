@@ -271,7 +271,7 @@ helper.blockLightbox = function() {
             await browser.waitForAngular();
         },
         submit: async function() {
-            el.$('a.button-green').click();
+            el.$('a.button-theme').click();
             await browser.waitForAngular();
         }
     };
@@ -285,7 +285,7 @@ helper.delete = function() {
     let obj = {
         el:el,
         delete: async function(){
-            el.$('.button-red').click();
+            el.$('.button-default').click();
             await utils.lightbox.confirm.ok();
         }
     };

@@ -35,13 +35,11 @@
         input {
             display: none;
             &:checked+label {
-                background: $primary;
-                border: 1px solid $primary;
+                background: $red;
                 color: $white;
             }
             &:checked+.blocked {
                 background: $red;
-                border: 1px solid $red;
                 color: $white;
             }
         }
@@ -49,27 +47,25 @@
     label {
         @include font-size(small);
         background: $mass-white;
-        border: 1px solid $gray-light;
         color: $gray-light;
         cursor: pointer;
         display: block;
-        padding: .5rem 3rem;
+        padding: .5rem .25rem;
         text-transform: none;
         transition: all .2s ease-in;
+        border-radius: 19px;
         &:hover {
             background: $primary-light;
-            border: 1px solid $primary;
             color: $white;
         }
         &.blocked {
             &:hover {
                 background: $red-light;
-                border: 1px solid $red;
             }
         }
     }
     .create-epic-button {
         display: block;
-        width: 100%;
+        margin-top: 20px;
     }
 }

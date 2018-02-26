@@ -13,6 +13,7 @@ tg-project-menu {
         &.menu-fixed {
             position: fixed;
             top: 1rem;
+            width: 72px;
         }
     }
 }
@@ -40,10 +41,10 @@ tg-project-menu {
         .helper {
             @include font-size(small);
             animation: slideLeft 200ms ease-in-out both;
-            background: linear-gradient(to right, rgba($black, 1) 0%, rgba($black, .8) 100%);
+            background: linear-gradient(to right, rgba($grayer, 1) 0%, rgba($grayer, .8) 100%);
             color: $white;
             display: block;
-            left: 50px;
+            left: 60px;
             opacity: 1;
             padding: .4rem 1rem;
             position: absolute;
@@ -51,8 +52,9 @@ tg-project-menu {
             transition: all .2s;
             white-space: nowrap;
             z-index: 99;
+            text-transform: capitalize;
             &::after {
-                background: rgba($blackish, 1);
+                background: rgba($grayer, 1);
                 content: '';
                 height: $label-arrow-wh;
                 left: calc(-#{$label-arrow-wh}/2);
@@ -107,10 +109,10 @@ tg-project-menu {
 .backlog-sprints-menu {
     @include font-size(small);
     animation: slideLeft 200ms ease-in-out both;
-    background: linear-gradient(to right, rgba($black, 1) 0%, rgba($black, .8) 100%);
+    background: linear-gradient(to right, rgba($grayer, 1) 0%, rgba($grayer, .8) 100%);
     color: $white;
     display: block;
-    left: 50px;
+    left: 60px;
     opacity: 1;
     padding: .4rem 1rem;
     position: absolute;
@@ -134,7 +136,7 @@ tg-project-menu {
         }
     }
     &::after {
-        background: rgba($blackish, 1);
+        background: rgba($grayer, 1);
         content: '';
         height: $label-arrow-wh;
         left: calc(-#{$label-arrow-wh}/2);

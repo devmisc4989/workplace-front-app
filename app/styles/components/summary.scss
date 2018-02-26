@@ -49,19 +49,19 @@ $summary-background: $grayer;
                 transition: fill .2s;
             }
             svg {
-                fill: $primary;
+                fill: $primary-light;
             }
         }
         &.active {
             .graph {
-                fill: $primary;
+                fill: $red;
             }
             svg {
-                fill: $primary;
+                fill: $red;
             }
         }
         svg {
-            fill: $black;
+            fill: $white;
             height: 100%;
             max-height: 2rem;
             max-width: 2rem;
@@ -75,14 +75,14 @@ $summary-background: $grayer;
     }
     .main-summary-stats {
         display: flex;
-        transform: translateY(0);
+        transform: translateY(50%);
         transition: all .2s ease-in-out;
     }
 
 
     .show-role-points {
         .points-per-role-stats {
-            transform: translateY(-35px);
+            transform: translateY(-50%);
         }
         .main-summary-stats {
             transform: translateY(-65px);
@@ -123,6 +123,7 @@ $summary-background: $grayer;
 .large-summary {
     align-items: stretch;
     justify-content: space-between;
+    align-items: center;
     padding: .75rem 1rem;
     .stats-wrapper {
         padding-top: .35rem;
@@ -149,7 +150,6 @@ $summary-background: $grayer;
         }
         &.summary-completed-points,
         &.summary-closed-tasks {
-            border-right: 1px solid $blackish;
             margin-right: 0;
             padding-right: 1rem;
             +.summary-stats {
@@ -197,7 +197,7 @@ $summary-background: $grayer;
     }
     .points-per-role-stats {
         margin-left: .5rem;
-        transform: translateY(35px);
+        transform: translateY(100%);
         transition: all .2s ease-in-out;
         .number {
             @include font-size(large);
@@ -211,34 +211,34 @@ $summary-background: $grayer;
 }
 
 .empty-burndown {
-    @include font-type(light);
     align-content: center;
     align-items: center;
-    background: rgba($primary-dark, .15);
+    background: $mass-white url("../images/capa-1.png") 20px 50% no-repeat;
+    background-size: 125px 115px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-bottom: 1rem;
-    padding: 2rem 6rem;
+    padding: 40px 25px 40px 160px;
     svg {
         @include svg-size(4rem);
-        fill: $primary-dark;
+        fill: $white;
         flex-basis: 4rem;
         flex-shrink: 0;
         margin-right: 2rem;
     }
     p {
         margin: 0;
+        color: $gray-light;
     }
     .empty-text {
         flex: 1;
     }
     .title {
-        @include font-type(light);
-        @include font-size(large);
+        @include font-type(bold);
+        @include font-size(larger);
         color: $primary-dark;
         margin: 0;
-        text-transform: uppercase;
     }
     a {
         @include font-type(bold);

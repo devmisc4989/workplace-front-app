@@ -7,20 +7,24 @@ $black: #000;
 $blackish: #050505;
 $grayer: #484b59;
 $gray: #555;
-$gray-light: #dbdcdf;
-$whitish: #e4e3e3;
+$gray-light: #868a97;
+$whitish: #edeeef;
 $white: #fff;
+$success: #44d029;
 
 // Mass white
-$mass-white: #f5f5f5;
+$mass-white: #dbdce0;
 
 // Primary colors
-$primary-light: #9dce0a;
-$primary: #5b8200;
+$primary-light: #f50a2c;
+$primary: #f73b56;
 $primary-dark: #474a5a;
 $dark-bgr: #353843;
 $sidebar-text-color: #868a97;
 $main-bgr-color: #ecf0f1;
+$border-color: #e1e1e1;
+$default-color: #ced1d6;
+$gray-bgr: #e7e8ea;
 
 //Warning colors
 $red-light: #ff8282;
@@ -43,3 +47,8 @@ $tribe-secondary: darken($tribe-primary, 10%);
 $top-icon-color: #11241f;
 $dropdown-color: rgba(darken($grayer, 20%), 1);
 $code-bg: #272822;
+
+$menu-color:  #abacb1;
+$tabs-color: #454a5a;
+$simple-text-color: #052847;
+$hover-row: #f4f5f6;

@@ -1,4 +1,9 @@
 .admin-common {
+    .admin-common-top {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
     header {
         h1 {
             margin-bottom: 0;
@@ -15,12 +20,12 @@
         }
     }
     .total {
-        @include font-size(large);
+        @include font-size(medium);
         align-items: center;
         background-color: $whitish;
-        color: $grayer;
+        color: $gray-light;
         display: flex;
-        padding: .3rem 1rem;
+        padding: 0;
         &:hover {
             .icon-edit {
                 opacity: 1;

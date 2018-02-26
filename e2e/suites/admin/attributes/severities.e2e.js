@@ -53,7 +53,7 @@ describe('attributes - severities', function() {
 
         utils.common.takeScreenshot('attributes', 'delete-severity');
 
-        el.$('.button-green').click();
+        el.$('.button-theme').click();
 
         await utils.lightbox.close(el);
 

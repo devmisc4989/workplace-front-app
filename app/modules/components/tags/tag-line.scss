@@ -5,18 +5,18 @@
 }
 
 .add-tag-button {
-    color: $gray-light;
+    color: $sidebar-text-color;
     cursor: pointer;
     display: inline-block;
     &:hover {
-        color: $primary-light;
+        color: $red;
+        .icon-add {
+            fill: $red;
+        }
     }
     .icon-add {
-        @include svg-size(.9rem);
-        fill: currentColor;
-        margin: .5rem .25rem 0 0;
-    }
-    .add-tag-text {
-        @include font-size(small);
+        @include svg-size(.75rem);
+        fill: $sidebar-text-color;
+        margin: .25rem .25rem 0 0;
     }
 }

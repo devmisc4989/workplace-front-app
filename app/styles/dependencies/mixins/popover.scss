@@ -13,7 +13,7 @@
 ) {
     @include font-type(light);
     @include font-size(small);
-    background: $blackish;
+    background: $grayer;
     bottom: #{$bottom};
     color: $white;
     display: none;
@@ -45,7 +45,7 @@
         }
     }
     &:after {
-        background: $blackish;
+        background: $grayer;
         bottom: #{$arrow-bottom};
         content: '';
         height: #{$arrow-height};

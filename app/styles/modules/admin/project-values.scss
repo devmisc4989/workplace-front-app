@@ -20,8 +20,13 @@
 }
 
 .project-values-header {
-    @include font-type(bold);
-    border-bottom: 3px solid $whitish;
+    @include font-type(title);
+    background: $mass-white;
+    border-radius: 50px;
+    .project-values-row {
+        padding: 0.5rem 1rem;
+        border-bottom: none;
+    }
 }
 .project-values-body {
     form {
@@ -33,7 +38,7 @@
     }
     .project-values-row {
         &:hover {
-            background: lighten($primary, 60%);
+            background: $hover-row;
             cursor: move;
             transition: background .2s ease-in;
             .icon {

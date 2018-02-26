@@ -71,7 +71,7 @@ describe('admin - roles', function() {
 
         utils.common.takeScreenshot('attributes', 'delete-type');
 
-        el.$('.button-green').click();
+        el.$('.button-theme').click();
 
         let newRolesCount = await adminPermissionsHelper.getRoles().count();
 

@@ -1,9 +1,18 @@
 @mixin profile-form {
     form {
         display: flex;
+        background: $white;
+        padding: 3.125rem;
+        border-radius: 5px;
     }
     fieldset {
         margin-bottom: 1rem;
+        &.submit {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
     }
     label {
         @include font-type(light);
@@ -46,10 +55,11 @@
         transform-origin: center center;
     }
     .use-default-image {
-        @include font-size(x-small);
+        @include font-size(xsmall);
         display: block;
-        margin-top: .25rem;
+        margin-top: 0.75rem;
         text-align: center;
+        color: $sidebar-text-color;
         &:hover {
             color: $red;
         }
@@ -57,7 +67,7 @@
 
     .project-details-form-data {
         flex: 1;
-        max-width: 500px;
+        max-width: 615px;
     }
     @include breakpoint(tablet) {
         form {

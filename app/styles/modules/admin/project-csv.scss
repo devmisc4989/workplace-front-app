@@ -1,3 +1,8 @@
+.admin-attributes-section-wrapper {
+    background: $white;
+    border-radius: 5px;
+    padding: 1.25rem;
+}
 .project-csv {
     margin-bottom: 2.5rem;
     .project-values-title {
@@ -12,6 +17,9 @@
         a {
             @include font-size(small);
             min-width: 110px;
+            &:hover {
+                color: $red;
+            }
         }
         .icon:not(.icon-clipboard) {
             fill: currentColor;
@@ -27,16 +35,21 @@
         width: 100%;
         input {
             flex-grow: 1;
+            border-radius: 5px 0 0 5px;
         }
     }
     .option-wrapper {
         align-items: center;
-        border: 1px solid $gray-light;
+        border: 1px solid $primary-dark;
+        background: $primary-dark;
+        color: $white;
         border-left: 0;
         border-radius: 0 5px 5px 0;
         cursor: pointer;
         display: flex;
         padding: 0 1rem;
+        margin-left: -1px;
+        fill: $white;
     }
     .button {
         padding: .5rem 1rem;

@@ -1,16 +1,13 @@
 .button,
 %button {
-    @include font-type(light);
-    @include font-size(small);
     background: transparent;
     border: 0;
     border-radius: 3px;
     color: $white;
     cursor: pointer;
     display: inline-block;
-    padding: .6rem 2rem;
+    padding: .7rem 1.5rem;
     text-align: center;
-    text-transform: uppercase;
     transition: all .2s linear;
     vertical-align: middle;
     &:hover {
@@ -77,10 +74,10 @@
 }
 
 .submit-button {
-    width: 100%;
+    width: auto;
 }
-.button-green,
-a.button-green {
+.button-theme,
+a.button-theme {
     @extend %button;
     background: $primary;
     &:hover,
@@ -89,13 +86,26 @@ a.button-green {
         color: $white;
     }
 }
+
+.button-theme,
+a.button-theme {
+    @extend %button;
+    background: $red;
+    &:hover,
+    &.active {
+        background: darken($red, 10%);
+        color: $white;
+    }
+}
+
 .button-gray,
 a.button-gray {
     @extend %button;
-    background: $gray;
+    background: $gray-light;
+    text-transform: capitalize;
     &:hover,
     &.active {
-        background: $primary-light;
+        background: darken($gray-light, 5%);
         color: $white;
     }
 }
@@ -108,7 +118,7 @@ a.button-gray {
         color: $white;
     }
 }
-.button-red {
+.button-default {
     @extend %button;
     background: $red-light;
     &:hover {
@@ -120,18 +130,37 @@ a.button-gray {
     }
 }
 
+.button-default {
+    @extend %button;
+    background: $default-color;
+    color: $red!important;
+    span {
+        color: $red!important;
+    }
+    &:hover {
+        background: $gray-light;
+        color: $red!important;
+        span {
+            color: $red!important;
+        }
+    }
+}
+
 .button-bulk {
     @extend %button;
-    background: $primary;
+    background: $white;
     padding: .55rem .75rem;
     .icon {
-        fill: currentColor;
+        fill: $sidebar-text-color;
         margin-right: 0;
         position: relative;
         top: 1px;
     }
     &:hover {
-        background: $primary-light;
+        background: $gray-light;
+        .icon {
+            fill: $white;
+        }
     }
 }
 .button-auth {

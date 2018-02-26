@@ -1,10 +1,10 @@
 tg-lightbox-close
 
 .create-epic-container
-    h2.title(translate="EPICS.CREATE.TITLE")
     form(
         ng-submit="vm.createEpic()"
     )
+        h2.title(translate="EPICS.CREATE.TITLE")
         .subject-container
             .color-selector
                 fieldset
@@ -93,7 +93,7 @@ tg-lightbox-close
                 placeholder="{{'EPICS.CREATE.BLOCKED_NOTE_PLACEHOLDER' | translate}}"
             )
         fieldset
-            button.button-green.create-epic-button.e2e-create-epic-button(
+            button.button-theme.create-epic-button.e2e-create-epic-button(
                 type="submit"
                 tg-loading="vm.loading"
                 title="{{ 'EPICS.CREATE.CREATE_EPIC' | translate }}"

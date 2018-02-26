@@ -1,14 +1,27 @@
+.table-team-wrapper {
+    background: $white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: .5rem 0;
+    border-radius: 5px;
+    h2 {
+        padding: 0 1.875rem;
+        color: $gray-light;
+        @include font-size(xsmall);
+    }
+}
+
 .basic-table {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0 1.875rem;
     .row {
         align-items: center;
-        border-bottom: 1px solid darken($whitish, 4%);
+        border-bottom: 2px solid $border-color;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        padding: .3rem 0;
+        padding: 1.25rem 0;
         text-align: left;
         width: 100%;
         @include breakpoint(tablet) {

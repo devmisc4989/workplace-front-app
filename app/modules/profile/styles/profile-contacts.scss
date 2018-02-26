@@ -1,5 +1,7 @@
 .profile-contacts {
-    border-top: 1px solid $whitish;
+    padding: 1rem 0 1rem 2rem;
+    border-radius: 0 5px 5px;
+    background: $white;
     display: flex;
     flex-direction: column;
 }

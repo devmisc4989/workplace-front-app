@@ -2,7 +2,7 @@
     h4 {
         @include font-type(bold);
         background: $mass-white;
-        color: $gray;
+        color: $gray-light;
         margin-bottom: .5rem;
         padding: .5rem;
         .icon {
@@ -15,8 +15,10 @@
     p {
         @include font-size(small);
         color: $gray-light;
+        padding-left: 1rem;
+        border-left: 4px solid $gray-light;
     }
     a {
-        color: $primary;
+        color: $red;
     }
 }

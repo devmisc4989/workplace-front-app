@@ -1,31 +1,44 @@
 .profile-timeline {
-    border-top: 1px solid $whitish;
+    padding: 0;
+    border-radius: 0 5px 5px;
     .activity-item {
-        border-bottom: 1px solid $whitish;
-        padding: 1rem .5rem 1rem 0;
+        background: $white;
+        border-radius: 5px;
+        padding: 1.5rem;
+        margin-bottom: 5px;
         position: relative;
+        &:first-child {
+            border-top: none;
+        }
         p {
             margin-bottom: 0;
+            color: $sidebar-text-color;
         }
         a,
         .username {
-            color: $primary;
+            color: $primary-dark;
             &:first-child {
-                @include font-type(bold);
-                color: $gray;
+                color: $primary-dark;
+                @include font-type(title);
             }
         }
         a:hover {
             color: $primary-light;
         }
+        img {
+            border-radius: 50%;
+        }
         blockquote {
             line-height: 1.4rem;
             margin-bottom: 0;
-            margin-left: calc(35px + 1rem);
-            margin-top: .5rem;
+            margin-left: calc(48px + 1rem);
+            margin-top: 0;
+            padding: 0;
             overflow-x: auto;
             overflow-y: hidden;
             white-space: pre-line;
+            color: $sidebar-text-color;
+            border: none;
         }
         img {
             max-height: 640px;
@@ -38,20 +51,21 @@
             margin-right: 130px;
         }
         .activity-date {
-            color: $gray-light;
+            color: $sidebar-text-color;
             font-size: .75rem;
             position: absolute;
-            right: .5rem;
+            right: 1.2rem;
             top: 1.2rem;
         }
         .profile-contact-picture,
         .profile-member-picture {
             border-radius: .1rem;
-            flex-basis: 2rem;
+            flex-basis: 3rem;
             flex-shrink: 0;
             margin-right: 1rem;
             vertical-align: center;
-            width: 2rem;
+            width: 3rem;
+            height: 3rem;
             img {
                 width: 100%;
             }
@@ -77,12 +91,6 @@
         }
         .activity-member-info {
             flex: 1;
-        }
-        a {
-            @include font-type(bold);
-        }
-        p {
-            color: $gray-light;
         }
     }
     .single-attachment {

@@ -16,17 +16,18 @@ div.wrapper(
             include ../includes/components/mainTitle
             p.admin-subtitle(translate="ADMIN.REPORTS.SUBTITLE")
 
-        p(translate="ADMIN.REPORTS.DESCRIPTION")
+        div.admin-attributes-section-wrapper
+            p(translate="ADMIN.REPORTS.DESCRIPTION")
 
-        div.admin-attributes-section(tg-csv-epic)
-        div.admin-attributes-section(tg-csv-us)
-        div.admin-attributes-section(tg-csv-task)
-        div.admin-attributes-section(tg-csv-issue)
+            div.admin-attributes-section(tg-csv-epic)
+            div.admin-attributes-section(tg-csv-us)
+            div.admin-attributes-section(tg-csv-task)
+            div.admin-attributes-section(tg-csv-issue)
 
-        div
-            a.help-button(
-                href="https://tree.taiga.io/support/admin/csv-reports/"
-                target="_blank"
-            )
-                tg-svg(svg-icon="icon-question")
-                span(translate="ADMIN.REPORTS.HELP")
+            div
+                a.help-button(
+                    href="https://tree.taiga.io/support/admin/csv-reports/"
+                    target="_blank"
+                )
+                    tg-svg(svg-icon="icon-question")
+                    span(translate="ADMIN.REPORTS.HELP")

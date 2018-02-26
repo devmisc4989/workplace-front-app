@@ -5,6 +5,7 @@ $dropdown-width: 350px;
     height: $navbar;
     justify-content: space-between;
     position: relative;
+    border-bottom: 1px solid $border-color;
     &::after {
         background-size: 200%;
         bottom: 0;
@@ -25,25 +26,30 @@ $dropdown-width: 350px;
     .nav-left {
         a {
             color: $red;
-            padding: .5rem 1.5rem;
+            padding: .5rem 1.25rem;
+            @include font-size(small);
+            &:hover {
+                color: darken($red, 10%);
+            }
         }
         .logo {
-            background: rgba($black, .2);
-            padding: .3rem .75rem;
+            border-right: 1px solid $border-color;
+            padding: 0 1.25rem 0 3.125rem;
         }
         svg {
-            @include svg-size(1.6rem);
+            @include svg-size(7rem);
+            height: 3.625rem;
         }
     }
     .nav-right {
         margin-left: auto;
         a {
-            color: $white;
+            color: $grayer;
             padding: .5rem 2rem;
         }
         svg {
             @include svg-size(1.2rem);
-            fill: rgba($primary-dark, .8);
+            fill: $menu-color;
             transition: all .2s linear;
         }
     }
@@ -52,21 +58,39 @@ $dropdown-width: 350px;
         display: inline-block;
         transition: all .2s linear;
         &:hover {
-            background: rgba($black, .2);
-            color: $primary-light;
+            color: $sidebar-text-color;
             svg {
-                fill: $white;
+                fill: $sidebar-text-color;
             }
 
         }
         &.user-avatar {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            position: relative;
             min-width: 200px;
-            padding: 0;
-            padding-left: 2rem;
+            height: $navbar;
+            padding: 0 1.875rem;
             text-align: right;
             color: #052847;
+            border-left: 1px solid $border-color;
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 7px 6px 0 6px;
+                border-color: #ccc transparent transparent transparent;
+                margin-left: 1rem;
+            }
             span {
                 padding-right: 1rem;
+            }
+            img {
+                border-radius: 50%;
+                margin-right: 1rem;
             }
         }
 
@@ -86,6 +110,7 @@ $dropdown-width: 350px;
         }
     }
     .navbar-dropdown {
+        top: 100%!important;
         a {
             padding: .8rem .5rem;
         }
@@ -103,8 +128,8 @@ $dropdown-width: 350px;
 
 .navbar-dropdown {
     @extend %dropdown;
-    background: $blackish;
-    border: 1px solid $black;
+    background: $dark-bgr;
+    border: none;
     padding: .3rem;
     &.dropdown-user {
         left: calc(50% - 200px/2);
@@ -114,10 +139,20 @@ $dropdown-width: 350px;
         }
     }
     ul {
-        @include arrow('bottom', $blackish, $blackish, 1, 8);
+        @include arrow('bottom', $dark-bgr, $dark-bgr, 1, 8);
         margin: 0;
         margin-bottom: .5rem;
         padding: 0;
+        &:after {
+            content: normal;
+        }
+        li {
+            a {
+                &:hover {
+                    background: $grayer;
+                }
+            }
+        }
     }
     .plugin {
         &:hover {
@@ -134,17 +169,16 @@ $dropdown-width: 350px;
         }
     }
     a {
-        color: $gray-light;
+        color: $gray-light!important;
         display: block;
         padding: .8rem .5rem;
         &:hover {
-            background: rgba($white, .1);
-            color: $primary-light;
+            color: $white!important;
         }
         &.see-more-projects-btn,
         &.create-organization-btn,
         &.create-project-btn {
-            color: $white;
+            color: $white!important;
             text-align: center;
             &:hover {
                 color: $white;

@@ -7,22 +7,37 @@
     }
     .title {
         @include font-size(large);
-        text-transform: uppercase;
+        color: $gray-light;
     }
     p {
         @include font-type(light);
         margin: 0;
     }
     a {
-        @include font-type(light);
-        color: $primary;
+        @include font-size(medium);
+        color: $red;
+        text-transform: uppercase;
     }
 }
 
 .empty-small {
     @extend %empty;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .title {
+        @include font-size(large);
+        color: $primary-dark;
+    }
+    a {
+        color: $gray-light;
+        text-transform: capitalize;
+    }
     img {
         max-width: 175px;
+        display: none;
     }
 }
 
@@ -30,6 +45,11 @@
     @extend %empty;
     img {
         max-width: 800px;
+        display: none;
+    }
+
+    &.tags-empty {
+        margin-top: 0;
     }
 }
 

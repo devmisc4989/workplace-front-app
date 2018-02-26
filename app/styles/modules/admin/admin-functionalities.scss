@@ -2,43 +2,48 @@
     .module-container {
         max-width: 900px;
         width: 100%;
+        background: $white;
+        border-radius: 5px;
+        padding: 1.25rem;
+        margin-top: 1rem;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
     .module {
         align-content: center;
         align-items: flex-start;
-        border-bottom: 1px solid $whitish;
+        border-bottom: 2px solid $border-color;
         display: flex;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
         &.active {
             .module-icon .icon,
             .module-name {
-                color: $primary;
-                fill: $primary;
+                color: $primary-dark;
+                fill: $red;
             }
         }
     }
     .module-icon {
-        flex-basis: 3rem;
+        flex-basis: 2rem;
         flex-shrink: 0;
-        margin: 0 .5rem 0 0;
+        margin: 0;
+        height: 1.5rem;
         .icon {
-            @include svg-size(3rem);
+            @include svg-size(1.5rem);
             fill: $gray-light;
         }
     }
     .module-name {
-        @include font-type(bold);
         @include font-size(large);
         color: $gray-light;
         flex-basis: 100px;
         flex-shrink: 0;
         margin: 0 .5rem;
+        line-height: 1.25rem;
     }
     .module-desc {
-        @include font-size(small);
         color: $gray-light;
         flex: 1;
-        margin: 0 2rem 0 0;
+        margin: 0 4rem 0 0;
         p {
             margin: 0;
         }
@@ -56,12 +61,26 @@
         fieldset,
         .icon {
             margin: 0 .5rem;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        fieldset {
+            margin: 0 1.25rem;
         }
         .icon {
             fill: $gray-light;
             &:hover {
                 fill: $primary;
             }
+        }
+
+        label {
+            display: inline-block;
+            color: $primary-dark;
+            @include font-type(title);
+            @include font-size(xsmall);
+            margin-bottom: 8px;
         }
     }
     .module-scrum {

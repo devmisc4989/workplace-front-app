@@ -13,16 +13,17 @@ div.wrapper(
         include ../includes/modules/admin-submenu-project-profile
 
     section.main.admin-common(tg-project-export)
-        header
-            include ../includes/components/mainTitle
-            p.admin-subtitle(translate="ADMIN.PROJECT_EXPORT.SUBTITLE")
+        header.admin-common-top
+            div
+                include ../includes/components/mainTitle
+                p.admin-subtitle(translate="ADMIN.PROJECT_EXPORT.SUBTITLE")
 
-        div.admin-project-export-buttons
-            a.button-green.button-export(
-                href=""
-                title="{{ 'ADMIN.PROJECT_EXPORT.EXPORT_BUTTON_TITLE' | translate }}"
-            )
-                span(translate="ADMIN.PROJECT_EXPORT.EXPORT_BUTTON")
+            div.admin-project-export-buttons
+                a.button-theme.button-export(
+                    href=""
+                    title="{{ 'ADMIN.PROJECT_EXPORT.EXPORT_BUTTON_TITLE' | translate }}"
+                )
+                    span(translate="ADMIN.PROJECT_EXPORT.EXPORT_BUTTON")
 
         div.admin-project-export-result.hidden
             div.spin.hidden

@@ -184,7 +184,7 @@ CreateEditSprint = ($repo, $confirm, $rs, $rootscope, lightboxService, $loading,
             $el.find(".title").text(text)
 
             text = $translate.instant("COMMON.CREATE")
-            $el.find(".button-green").text(text)
+            $el.find(".button-theme").text(text)
 
             lightboxService.open($el)
             $el.find(".sprint-name").focus()
@@ -207,7 +207,7 @@ CreateEditSprint = ($repo, $confirm, $rs, $rootscope, lightboxService, $loading,
             $el.find(".title").text(editSprint)
 
             save = $translate.instant("COMMON.SAVE")
-            $el.find(".button-green").text(save)
+            $el.find(".button-theme").text(save)
 
             lightboxService.open($el)
             $el.find(".sprint-name").focus().select()

@@ -3,7 +3,9 @@
     width: 240px;
     .title {
         @include font-size(larger);
-        padding: 2rem 1rem 0 2rem;
+        padding: 2rem 1rem 0 1rem;
+        color: $white;
+        text-transform: capitalize;
     }
     .add-button {
         align-items: center;
@@ -33,12 +35,12 @@
         }
     }
     input[type="text"] {
-        background: $whitish;
-        color: $grayer;
-        margin: 1rem 1rem 1rem 2rem;
+        color: $gray-light;
+        border: 2px solid $grayer;
+        margin: 1rem;
         width: 80%;
         @include placeholder {
-            color: $gray-light;
+            color: $grayer;
         }
     }
     .loading {
@@ -48,10 +50,9 @@
 }
 .wiki-link {
     align-items: center;
-    border-bottom: 1px solid $whitish;
     display: flex;
     justify-content: space-between;
-    margin-left: 2rem;
+    margin-left: 1rem;
     padding-right: 1rem;
     position: relative;
     &:hover {
@@ -83,6 +84,8 @@
         display: block;
         flex-grow: 1;
         padding: 1rem 0;
+        color: $gray-light;
+        text-transform: capitalize;
     }
     .dragger {
         fill: $gray-light;
@@ -96,6 +99,9 @@
     }
     .remove-wiki-page {
         opacity: 0;
+        .icon {
+            fill: $white;
+        }
         &:hover {
             .icon {
                 fill: $red;

@@ -53,7 +53,7 @@ describe('attributes - types', function() {
 
         utils.common.takeScreenshot('attributes', 'delete-type');
 
-        el.$('.button-green').click();
+        el.$('.button-theme').click();
 
         await utils.lightbox.close(el);
 

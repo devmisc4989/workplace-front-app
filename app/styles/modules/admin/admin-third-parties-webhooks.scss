@@ -1,6 +1,12 @@
 .admin-webhooks {
+    display: flex;
+    flex-flow: column;
     .webhooks-table {
         margin-bottom: 1rem;
+        padding-bottom: 80px;
+        background: $white;
+        border-radius: 5px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         .row {
             border-bottom: 0;
             padding: .5rem 0;
@@ -14,8 +20,11 @@
     }
 
     .table-header {
-        @include font-type(bold);
-        border-bottom: 1px solid $gray-light;
+        @include font-type(title);
+        border-radius: 18px;
+        background: $mass-white;
+        margin: 1.875rem 0 0.75rem;
+        padding: 0 1.875rem;
     }
     .table-body {
         .webhook-service {
@@ -30,7 +39,7 @@
         margin-right: .5rem;
     }
     .webhook-service {
-        flex-basis: 20%;
+        flex-basis: 25%;
         flex-shrink: 0;
     }
     .webhook-url {
@@ -59,10 +68,20 @@
         flex-grow: 0;
         flex-shrink: 0;
         margin-left: auto;
+        text-align: right;
         a {
             cursor: pointer;
             display: inline-block;
             margin-right: .5rem;
+            &:first-child {
+                svg {
+                    fill: $red;
+                    &:hover {
+                        fill: $red-light;
+                        transition: fill .2s linear;
+                    }
+                }
+            }
         }
         svg {
             fill: $gray-light;

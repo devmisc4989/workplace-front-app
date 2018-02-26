@@ -25,8 +25,6 @@
     justify-content: space-between;
     min-height: 36px;
     .attachments-title {
-        @include font-type(bold);
-        @include font-size(medium);
         color: $grayer;
         line-height: 36px;
         padding: 0 1rem;
@@ -39,12 +37,13 @@
         margin-left: .25rem;
         &.add-attachment-button {
             background: $gray;
-            border: 0;
+            border: 1px solid $gray;
+            border-radius: 0;
             display: inline-block;
             padding: .5rem;
             transition: background .25s;
             &:hover {
-                background: $primary-light;
+                background: $red;
             }
         }
         svg {
@@ -81,12 +80,11 @@
 }
 
 .attachments-empty {
-    @include font-size(large);
-    @include font-type(bold);
-    border: 3px dashed $whitish;
-    color: $gray-light;
-    margin-top: .5rem;
-    padding: 1rem;
+    border: 1px dashed $gray-light;
+    border-radius: 5px;
+    color: $sidebar-text-color;
+    margin-top: 1.125rem;
+    padding: 2.25rem 1rem;
     text-align: center;
 }
 
@@ -96,6 +94,7 @@
     .attachment-name {
         @include font-type(bold);
         padding-right: 1rem;
+        text-align: left;
         svg {
             fill: $gray;
             height: .9rem;
@@ -117,11 +116,11 @@
         color: $gray-light;
     }
     .more-attachments-num {
-        color: $primary;
+        color: $red;
         margin-left: .5rem;
     }
     &:hover {
-        background: lighten($primary, 60%);
+        background: lighten(rgba($primary-light, .2), 30%);
         transition: background .2s ease-in;
     }
 }

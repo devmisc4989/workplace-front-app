@@ -23,12 +23,20 @@ class MessagesController
         @appMetaService.setfn @._setMeta.bind(this)
 
         @.messages = []
-        @.lastMessageId = 1000000
+        @.lastMessageId = 10000000
+
+        @.slug = @routeParams.slug
+        @.currentRoom = ''
+        @.roomTitle = ''
+        @.roomProject = ''
+        @.message_text = ''
+        @.unread_rooms = {}
+        @.current_unread_count = 0
 
         @socket.on 'message', (data) =>
             data.receivers.forEach (receiver) =>
                 if receiver.id == @currentUserService.getUser().get('id')
-                    if((data.sender.id != @currentUserService.getUser().get('id')) && (data.room == @currentRoom.get('id')))
+                    if((data.sender.id != @currentUserService.getUser().get('id')) && (data.room.id == @.currentRoom.get('id')))
                         @scope.$apply () =>
                             @.messages.push(data)
                             return                        
@@ -43,13 +51,6 @@ class MessagesController
                 .catch (xhr) =>
                     @xhrError.response(xhr)
             return
-
-        @.slug = @routeParams.slug
-        @.currentRoom = ''
-        @.roomTitle = ''
-        @.roomProject = ''
-
-        @.message_text = ''
 
         if @routeParams.slug
             @roomsService
@@ -84,7 +85,18 @@ class MessagesController
             description: @translate.instant("MESSAGES.PAGE_DESCRIPTION", ctx)
         }
 
+    getUnreadRooms: () ->
+        currentRoomSlug = @.slug
+        @resources.rooms.getUnreadRooms(@currentUserService.getUser().get('id'), @.slug)
+            .then (result) =>
+                rooms = result.toJS().reverse()
+                for i in [0...rooms.length]
+                    if(rooms[i].room_slug != currentRoomSlug)
+                        @.unread_rooms[rooms[i].room_id] = rooms[i].unread_count
+                    else
+                        @.current_unread_count = rooms[i].unread_count
     loadInitialData: () ->
+        @.getUnreadRooms()
         @roomsService.clear()
         @roomsService.fetchRooms()
 
@@ -92,22 +104,28 @@ class MessagesController
             .then (result) =>
                 @._loadingMessages = false       
                 @.messages = result.toJS().reverse()
-                @.lastMessageId = if (@.messages[0]) then @.messages[0].id - 1 else 1000000
+                @.lastMessageId = if (@.messages[0]) then @.messages[0].id - 1 else 10000000
             .catch (xhr) =>
                 @xhrError.response(xhr)
 
     getRoomName: (room) ->
         currentUserId = @currentUserService.getUser().get('id');
-        users = room.get('users').filter (user) -> (user.get('id') != currentUserId)
-        room_name = '';
-        for i in [0...users.size]
-            room_name += users.get(i).get('full_name') + ', '
-        return room_name.substr(0, room_name.length - 2)
+        if room.get('public_room') == 1
+            return room.get('name')
+        else
+            users = room.get('users').filter (user) -> (user.get('id') != currentUserId)
+            room_name = '';
+            for i in [0...users.size]
+                room_name += users.get(i).get('full_name') + ', '
+            return room_name.substr(0, room_name.length - 2)
         
     getRoomProjectName: (room) ->
-        return room.get('project_extra_info').get('name')
+        if room.get('public_room') == 1
+            return ""
+        else
+            return room.get('project_extra_info').get('name')
 
-    sendMessage: (event) ->
+    sendMessageByEnter: (event) ->
         currentUserId = @currentUserService.getUser().get('id');
         if(event.which == 13)
             if(@.message_text)
@@ -124,5 +142,19 @@ class MessagesController
             event.preventDefault()
             return false
         return true
+
+    sendMessage: () ->
+        currentUserId = @currentUserService.getUser().get('id');
+        if(@.message_text)
+            @messagesService.sendMessage({
+                room_slug: @.slug,
+                message: @.message_text
+            })
+            @.messages.push({
+                content: @.message_text,
+                sent_time: Math.floor(Date.now()),
+                sender: @currentUserService.getUser().toJS()
+            })
+        @.message_text = ''
 
 angular.module("taigaMessages").controller("MessagesCtrl", MessagesController)

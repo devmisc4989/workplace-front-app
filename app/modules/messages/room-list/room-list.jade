@@ -1,12 +1,19 @@
-nav    
-    ul
-        li(
+span()
+nav
+    ul.client-list
+        li.client-box(
             tg-repeat="room in vm.rooms"
+            ng-class="{active: (room.get('slug') == vm.room)}"
         )
-            a(
-                ng-class="{active: (room.get('slug') == vm.room)}"
-                ng-click="vm.changeRoom(room)"
-                href="/messages/{{room.get('slug')}}"
-            )
-                span.title(tg-bo-bind="vm.getRoomName(room)")                    
-                small(tg-bo-bind="vm.getRoomProjectName(room)")
+            .client-box-in
+                a(
+                    ng-click="vm.changeRoom(room)"
+                    href="/messages/{{room.get('slug')}}"
+                )
+                    .client-image
+                        img(tg-avatar="vm.getRoomMember(room)", tg-bo-alt="avatar")
+                    .client-text
+                        h2.title(tg-bo-bind="vm.getRoomName(room)")
+                        .clearfix
+                        p(tg-bo-bind="vm.getRoomProjectName(room)")
+                    .light-icon(id="new-message-{{room.get('id')}}" ng-class="{'icon-hidden':(vm.unreadrooms[room.get('id')] == undefined)}") {{vm.unreadrooms[room.get('id')]}}

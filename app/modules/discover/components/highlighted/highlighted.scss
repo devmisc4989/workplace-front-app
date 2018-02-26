@@ -184,7 +184,7 @@
         justify-content: flex-end;
         svg {
             @include svg-size(.75rem);
-            fill: $gray-light;
+            fill: $primary-dark;
             margin-right: .25rem;
         }
     }
@@ -194,9 +194,9 @@
         display: inline-block;
         margin-right: .5rem;
         &.active {
-            color: $primary;
+            color: $gray-light;
             svg {
-                fill: $primary;
+                fill: $red;
             }
         }
     }

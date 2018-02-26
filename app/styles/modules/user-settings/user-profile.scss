@@ -2,13 +2,25 @@
 
 .user-profile {
     @include profile-form;
-    max-width: 780px;
+    max-width: 1000px;
+    padding-left: 60px;
+    padding-top: 30px;
+    fieldset {
+        &.submit {
+            display: block;
+        }
+    }
     .submit-button {
-        width: 100%;
+        width: auto;
+        min-width: 175px;
+        display: inline-block;
     }
     .delete-account {
         @include font-size(small);
-        display: block;
-        margin-top: 1rem;
+        display: inline-block;
+        margin-left: 1rem;
+        &:hover {
+            color: $red;
+        }
     }
 }

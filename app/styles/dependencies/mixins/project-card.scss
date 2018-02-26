@@ -10,7 +10,7 @@
         flex: 1;
     }
     .project-card-inner {
-        padding: 1rem;
+        padding: 1rem 0;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -18,14 +18,14 @@
     }
     .project-card-description {
         @include font-size(small);
-        @include font-type(light);
-        color: $gray;
+        color: $gray-light;
     }
     .project-card-statistics {
         display: flex;
         margin-top: auto;
         svg {
             @include svg-size(.75rem);
+            width: 1rem;
             fill: currentColor;
             margin-right: .25rem;
         }
@@ -35,10 +35,13 @@
         color: $gray-light;
         display: inline-block;
         margin-right: .5rem;
+        svg {
+            fill: $primary-dark;
+        }
         &.active {
-            color: $primary;
+            color: $gray-light;
             svg {
-                fill: currentColor;
+                fill: $red;
             }
         }
     }
@@ -60,11 +63,10 @@
     .project-card-name {
         line-height: 1.25;
         a {
-            @include font-size(large);
-            @include font-size(large);
-            color: $primary;
+            @include font-size(bg-medium);
+            color: $primary-dark;
             &:hover {
-                color: $primary-light;
+                color: $red;
             }
         }
     }

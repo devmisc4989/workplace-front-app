@@ -18,29 +18,25 @@
         }
     }
     .profile-img {
-        max-width: 100%;
+        max-width: 11.125rem;
         width: 100%;
+        border-radius: 50%;
     }
     .profile-edition {
-        @include font-size(large);
-        @include font-type(light);
-        background: rgba($black, .4);
+        display: inline-block;
+        background: $gray-light;
         bottom: 0;
         color: $white;
-        left: 0;
-        opacity: 0;
-        overflow: hidden;
-        padding: 1rem;
-        position: absolute;
-        transform: translateY(100%);
-        width: 100%;
+        padding: 0.5rem 1.5rem;
+        border-radius: 3px;
+        margin-top: 2rem;
         &:hover {
-            background: rgba($black, .8);
+            background: red;
             transition: all .3s cubic-bezier(.01, .7, 1, 1);
         }
 
     }
-    .button-green {
+    .button-theme {
         display: block;
         margin-bottom: 1rem;
     }
@@ -64,28 +60,26 @@
         }
     }
     h1 {
-        @include font-type(bold);
-        @include font-size(xlarge);
+        @include font-size(large);
         line-height: 1.2;
         margin-bottom: .25rem;
         text-transform: none;
         word-wrap: break-word;
+        color: $simple-text-color;
     }
     .not-full-name {
         word-wrap: break-word;
     }
     h2 {
-        @include font-type(light);
-        @include font-size(larger);
-        color: $gray;
+        @include font-type(title);
+        font-size: 1rem;
+        color: $red;
         line-height: 1.2;
         margin-bottom: 1rem;
     }
     .username {
-        @include font-type(light);
-        @include font-size(large);
-        color: $gray-light;
-        margin-bottom: 1rem;
+        color: $sidebar-text-color;
+        margin-bottom: 0.75rem;
     }
     .location {
         color: $gray-light;
@@ -100,26 +94,23 @@
         }
     }
     .profile-stats {
-        border-bottom: 1px solid $whitish;
-        border-top: 1px solid $whitish;
-        color: $gray;
+        color: $tabs-color;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 1.25rem;
-        padding: 1rem .5rem;
+        padding: 0.5rem .5rem;
         .stat {
             padding: 0 .2rem;
             text-align: center;
         }
         .stat-number {
             @include font-size(xlarge);
-            @include font-type(bold);
+            @include font-type(title);
             display: block;
             line-height: 1;
         }
         .stat-name {
-            @include font-type(text);
             @include font-size(small);
+            color: $sidebar-text-color;
             display: block;
         }
     }

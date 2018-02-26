@@ -15,10 +15,10 @@
 
 .epics-table-header {
     @include epics-table;
-    @include font-type(bold);
-    border-bottom: 1px solid $gray-light;
+    @include font-type(title);
+    background: $mass-white;
     display: flex;
-    padding: .5rem;
+    padding: 0 .5rem;
     position: relative;
     .project,
     .assigned {
@@ -61,10 +61,11 @@
     }
     .fieldset {
         @include font-size(small);
-        border-bottom: 1px solid $whitish;
+        border-bottom: 2px solid $border-color;
         color: $gray-light;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: .5rem 0;
         &:last-child {
             border: 0;

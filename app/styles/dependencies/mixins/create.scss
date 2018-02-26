@@ -1,9 +1,10 @@
 @mixin create-project {
     @include centered;
     max-width: 800px;
-
+    margin: 0 auto;
+    padding: 1rem;
     fieldset {
-        margin-bottom: 1rem;
+        margin: 0 0.25rem 1rem;
     }
 
     label {
@@ -40,21 +41,24 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        margin-bottom: 0;
+        margin: 1rem 0 0;
 
         .create-project-title {
             display: inline-block;
+            margin: 0;
+            text-transform: capitalize;
         }
         .icon {
             @include svg-size(1.75rem);
             margin-right: .5rem;
             vertical-align: middle;
+            fill: $red;
         }
     }
 
     &-title,
     &-description {
-        margin: 0;
+        margin: 1rem 0 0;
         text-align: center;
     }
 
@@ -86,10 +90,21 @@
 
         input {
             display: none;
+            &:checked + label {
+                background: $red;
+                color: $white;
+                @include font-type(medium);
+                .icon {
+                    fill: $white;
+                }
+            }
         }
 
         label {
             background: $mass-white;
+            text-transform: inherit;
+            border-radius: 19px!important;
+            color: $gray-light;
         }
     }
 
@@ -106,10 +121,13 @@
         }
     }
 
-    &-selector {
+    &-selector, form, .import-project-wrapper {
+        background: $white;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         a {
             align-items: center;
-            border-bottom: 1px solid $whitish;
             color: $grayer;
             cursor: pointer;
             display: flex;
@@ -120,13 +138,15 @@
             }
         }
         li {
+            border-top: 2px solid $border-color;
+
             &:hover {
-                background: rgba($primary, .1);
+                background: rgba($red, .1);
                 transition: background .3s ease-in;
             }
 
             &:first-child {
-                border-top: 1px solid $whitish;
+                border-top: none;
             }
         }
 
@@ -136,6 +156,7 @@
 
             .icon {
                 @include svg-size(2.25rem);
+                fill: $red;
             }
         }
 
@@ -145,12 +166,11 @@
         }
 
         &-template {
-            @include font-type(bold);
-            text-transform: uppercase;
+            @include font-size(large);
         }
 
         &-description {
-            @include font-type(light);
+            color: $sidebar-text-color;
         }
 
         &-long-description {
@@ -172,7 +192,7 @@
 
             &:hover {
                 svg {
-                    fill: $primary;
+                    fill: $red;
                     transition: fill .2s linear;
                 }
             }
@@ -195,11 +215,15 @@
         button {
             @include font-size(large);
             padding: .75rem;
+            background: $mass-white;
+            color: $red;
         }
 
         &-submit {
             flex: 4;
             margin-left: 1rem;
+            background: $red!important;
+            color: $white!important;
         }
 
         &-back,

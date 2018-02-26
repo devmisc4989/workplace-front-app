@@ -1,4 +1,6 @@
 .policy-table {
+    background: $white;
+    border-radius: 5px;
     .policy-table-row {
         align-items: center;
         border-bottom: 1px solid $whitish;
@@ -33,7 +35,7 @@
         display: none;
         &:checked {
             +label {
-                background: $primary;
+                background: $red;
                 transition: background .3s linear;
             }
         }
