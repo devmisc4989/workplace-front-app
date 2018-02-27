@@ -62,7 +62,7 @@ class RoomListController
 
     getRoomProjectName: (room) ->
         if room.get('public_room') == 1
-            return ""
+            return "Public Chatting Room"
         else
             return room.get('project_extra_info').get('name')
 

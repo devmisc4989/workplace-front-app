@@ -39,22 +39,27 @@
                             .sent-time {{message.sent_time | momentTimeStampFormat:'HH:mm'}}
                         h2 {{message.sender.full_name}}
                     .chat-content(ng-class="{'unread-message': ($index == vm.messages.length - vm.current_unread_count)}")
-                        p {{message.content}}
+                        p(ng-if="message.message_type =='text'") {{message.content}}
+                        a(href="{{message.attachment.url}}" target="_blank" ng-if="message.message_type =='attachment'") 
+                            tg-svg(svg-icon="icon-attachment")
+                            &nbsp; {{message.content}}
                 .bottom(id="message_bottom")
             div.typing-section
                 input.input-chat(type="text" placeholder="Type your message..." ng-model="vm.message_text" ng-keypress="vm.sendMessageByEnter($event)")
                 .right-attach
                     a.smile()
                         tg-svg(svg-icon="icon-smile")
-                    //- .add-attach
-                    //-     label.add-attachment-button(for="add-attach")
-                    //-         tg-svg(svg-icon="icon-attach")
-                    //-     input(
-                    //-         id="add-attach",
-                    //-         type="file",
-                    //-         ng-model="files",
-                    //-         tg-file-change="vm.addAttachments(files, true)"
-                    //-     )                            
-                    a.attach()
-                        tg-svg(svg-icon="icon-attach")
+                    .attach
+                        label.add-attachment-button(for="add-attach")
+                            tg-svg(svg-icon="icon-attach")
+                        input(
+                            id="add-attach",
+                            type="file",
+                            ng-model="files",
+                            tg-file-change="vm.addAttachment(files)"
+                        )                            
+                    //- a.attach()
+                    //-     tg-svg(svg-icon="icon-attach")
                 button.button-theme.mainbtn.chat-send(ng-click="vm.sendMessage()") Send
+            .single-attachment(ng-repeat="file in vm.uploadingAttachments()")
+                .percentage(ng-style="{'width': file.progressPercent}")

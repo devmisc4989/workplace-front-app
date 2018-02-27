@@ -157,6 +157,7 @@ urls = {
     "attachments/issue": "/issues/attachments"
     "attachments/task": "/tasks/attachments"
     "attachments/wiki_page": "/wiki/attachments"
+    "attachments/message": "/message/attachments"
 
     # Custom Attributess
     "custom-attributes/epic": "/epic-custom-attributes"

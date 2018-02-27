@@ -32,10 +32,18 @@
     background: $white;
     padding: 25px;
     border-radius: 5px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+
+    .single-attachment{
+        .percentage{
+            height: 2px;
+            background: #f73756;
+        }
+    }
 }
 
 .messages {
+    background: #fff;
     .container {
         height: calc(100vh - 165px);
         margin: 10px 0;
@@ -44,7 +52,7 @@
         .message-container {
             height: calc(100% - 170px);
             margin: 10px 0;
-            border: 1px solid $border-color;
+            // border: 1px solid $border-color;
             border-radius: 5px;
             overflow: auto;
             padding: 20px;
@@ -60,7 +68,7 @@
             text-align: center;
         }
         .sent-time {
-            font-size: 12px;
+            font-size: 14px;
             color: $gray-light;
         }
         .chat-box {
@@ -91,7 +99,7 @@
         }
 
         .chat-content {
-            padding-left: 60px;
+            padding-left: 80px;
             &.unread-message{
                 border-top: 1px dashed #f73756;
             }
@@ -166,15 +174,28 @@
     .input-chat {
         border: none;
     }
+
+    .attach{
+        input{
+            display: none;
+        }
+    }
 }
 
 .right-attach {
     display: flex;
-    a {
+    a, .attach {
         display: inline-block;
         margin-right: 12px;
         cursor: pointer;
     }
+
+    .attach{
+        label{
+            cursor: pointer;
+        }
+    }
+
     .icon {
         fill: $gray-light;
         @include svg-size(1.25rem);
@@ -194,16 +215,24 @@
 .room-filters {
     header {
         h1 {
-            color: $white;
+            color: #646b7f;
         }
     }
     .client-box {
         padding: 0 10px;
+        border-bottom: 1px solid #e1e4e7;
         &.active{
+            background: #fff;
             .client-text{
                 .title{
-                    color: #fff;
+                    color: #646b7f;
                 }
+            }
+        }
+
+        .client-text{
+            .title{
+                color: #646b7f;
             }
         }
 
@@ -251,4 +280,9 @@
         height: 50px;
         border-radius: 50%;
     }
+}
+
+.room-list{
+    background: #f3f4f6 !important;
+    width: 420px !important;
 }

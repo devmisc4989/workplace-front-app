@@ -126,17 +126,20 @@ class MessagesController
             return room.get('project_extra_info').get('name')
 
     sendMessageByEnter: (event) ->
+        @.current_unread_count = 0
         currentUserId = @currentUserService.getUser().get('id');
         if(event.which == 13)
             if(@.message_text)
                 @messagesService.sendMessage({
                     room_slug: @.slug,
-                    message: @.message_text
+                    message: @.message_text,
+                    message_type: 'text'
                 })
                 @.messages.push({
                     content: @.message_text,
                     sent_time: Math.floor(Date.now()),
-                    sender: @currentUserService.getUser().toJS()
+                    sender: @currentUserService.getUser().toJS(),
+                    message_type: 'text'
                 })
             @.message_text = ''
             event.preventDefault()
@@ -144,17 +147,53 @@ class MessagesController
         return true
 
     sendMessage: () ->
+        @.current_unread_count = 0
         currentUserId = @currentUserService.getUser().get('id');
         if(@.message_text)
             @messagesService.sendMessage({
                 room_slug: @.slug,
-                message: @.message_text
+                message: @.message_text,
+                message_type: 'text'
             })
             @.messages.push({
                 content: @.message_text,
                 sent_time: Math.floor(Date.now()),
-                sender: @currentUserService.getUser().toJS()
+                sender: @currentUserService.getUser().toJS(),
+                message_type: 'text'
             })
         @.message_text = ''
+
+    uploadingAttachments: () ->
+        return @messagesService.uploadingAttachments
+
+    addAttachment: (fileList) ->
+        @.current_unread_count = 0
+        project_id = @.currentRoom.get('project')
+        if (fileList.length) 
+            file = fileList[0]
+            @messagesService.createMessage({
+                room_slug: @.slug,
+                message: file.name,
+                message_type: 'attachment'
+            }).then (result) =>
+                @messagesService.addAttachment(project_id, result.get('id'), 'message', file, false)
+                .then (resp) =>
+                    attached = resp;
+                    @.messages.push({
+                        content: file.name,
+                        sent_time: Math.floor(Date.now()),
+                        sender: @currentUserService.getUser().toJS(),
+                        message_type: 'attachment',
+                        attachment:{
+                            url: attached.get('url')
+                        }
+                    })
+                    @messagesService.publishMessage({
+                        id: result.get('id')
+                    })
+                .catch () =>
+                    @messagesService.deleteMessage({
+                        id: result.get('id')
+                    })
 
 angular.module("taigaMessages").controller("MessagesCtrl", MessagesController)
