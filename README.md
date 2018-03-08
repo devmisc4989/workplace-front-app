@@ -56,7 +56,7 @@ To run a local Selenium Server, you will need to have the Java Development Kit (
 
 #### E2E tests ####
 
-- To run **e2e tests** you need [taiga-back](https://github.com/taigaio/taiga-back) running and
+- To run **e2e tests** you need running and
 
   ```
   gulp
